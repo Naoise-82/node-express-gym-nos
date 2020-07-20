@@ -45,7 +45,7 @@ const accounts = {
     if (user.password === request.body.password) {
       response.cookie('playlist', user.email);
       logger.info(`logging in ${user.email}`);
-      response.redirect('/dashboard');
+      response.redirect('/memberdashboard');
     } else {
       response.redirect('/login');
     }

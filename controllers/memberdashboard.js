@@ -4,7 +4,7 @@ const logger = require("../utils/logger");
 const uuid = require("uuid");
 const accounts = require("./accounts.js");
 
-const memberDashoard = {
+const memberDashboard = {
   index(request, response) {
     logger.info("rendering member dashboard");
     const loggedInUser = accounts.getCurrentUser(request);
@@ -14,3 +14,5 @@ const memberDashoard = {
     response.render("memberdashboard", viewData);
   }
 }
+
+module.exports = memberDashboard;
