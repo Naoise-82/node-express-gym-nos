@@ -7,6 +7,10 @@ const accounts = require("./accounts.js");
 const memberDashoard = {
   index(request, response) {
     logger.info("rendering member dashboard");
-    
+    const loggedInUser = accounts.getCurrentUser(request);
+    const viewData = {
+      title: "Member Dashboard"
+    };
+    response.render("memberdashboard", viewData);
   }
 }
