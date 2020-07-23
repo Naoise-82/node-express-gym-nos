@@ -8,13 +8,13 @@ const assessmentStore = {
   store: new JsonStore('./models/assessment-store.json', { assessments: [] }),
   collection: 'assessments',
 
-  getUserPlaylists(userid) {
+  getUserAssessments(userid) {
     return this.store.findBy(this.collection, {userid: userid});
   },
   
-  getAllPlaylists() {
+  /*getAllPlaylists() {
     return this.store.findAll(this.collection);
-  },
+  },*/
 
   getPlaylist(id) {
     return this.store.findOneBy(this.collection, { id: id });
