@@ -17,9 +17,9 @@ const assessmentStore = {
     return this.store.findAll(this.collection);
   },*/
 
-  /*getPlalist(id) {
+  getAssessment(id) {
     return this.store.findOneBy(this.collection, { id: id });
-  },*/
+  },
 
   addAssessment(assessment) {
     this.store.add(this.collection, assessment);
