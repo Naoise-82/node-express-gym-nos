@@ -1,17 +1,18 @@
-'use strict';
+"use strict";
 
-const _ = require('lodash');
-const JsonStore = require('./json-store');
+const _ = require("lodash");
+const JsonStore = require("./json-store");
 
 const assessmentStore = {
-
-  store: new JsonStore('./models/assessment-store.json', { assessmentCollection: [] }),
-  collection: 'assessmentCollection',
+  store: new JsonStore("./models/assessment-store.json", {
+    assessmentCollection: []
+  }),
+  collection: "assessmentCollection",
 
   getUserAssessments(userid) {
-    return this.store.findBy(this.collection, {userid: userid});
+    return this.store.findBy(this.collection, { userid: userid });
   },
-  
+
   /*getAllPlaylists() {
     return this.store.findAll(this.collection);
   },*/
@@ -29,7 +30,7 @@ const assessmentStore = {
     const assessment = this.assesment(id);
     this.store.remove(this.collection, assessment);
     this.store.save();
-  },
+  }
 
   /*removeAllPlaylists() {
     this.store.removeAll(this.collection);

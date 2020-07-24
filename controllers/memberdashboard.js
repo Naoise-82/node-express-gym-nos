@@ -3,7 +3,7 @@
 const logger = require("../utils/logger");
 const uuid = require("uuid");
 const accounts = require("./accounts.js");
-const assessmentStore = require("../models/assessment-store.js");
+const assessmentStore = require("../models/assessment-store");
 
 const memberDashboard = {
   index(request, response) {
