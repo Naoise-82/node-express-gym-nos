@@ -9,7 +9,8 @@ const memberDashboard = {
     logger.info("rendering member dashboard");
     const loggedInUser = accounts.getCurrentUser(request);
     const viewData = {
-      title: "Member Dashboard"
+      title: "Member Dashboard",
+      assessments: assessmentStore.getUserAssessments
     };
     response.render("memberdashboard", viewData);
   }

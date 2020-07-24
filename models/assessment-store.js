@@ -16,27 +16,27 @@ const assessmentStore = {
     return this.store.findAll(this.collection);
   },*/
 
-  getPlaylist(id) {
+  /*getPlalist(id) {
     return this.store.findOneBy(this.collection, { id: id });
-  },
+  },*/
 
-  addPlaylist(playlist) {
-    this.store.add(this.collection, playlist);
+  addAssessment(assessment) {
+    this.store.add(this.collection, assessment);
     this.store.save();
   },
 
-  removePlaylist(id) {
-    const playlist = this.getPlaylist(id);
-    this.store.remove(this.collection, playlist);
+  removeAssessment(id) {
+    const assessment = this.assesment(id);
+    this.store.remove(this.collection, assessment);
     this.store.save();
   },
 
-  removeAllPlaylists() {
+  /*removeAllPlaylists() {
     this.store.removeAll(this.collection);
     this.store.save();
-  },
+  },*/
 
-  addSong(id, song) {
+  /*addSong(id, song) {
     const playlist = this.getPlaylist(id);
     playlist.songs.push(song);
     
@@ -53,5 +53,5 @@ const assessmentStore = {
     const songs = playlist.songs;
     _.remove(songs, { id: songId});
     this.store.save();
-  },
+  },*/
 };
