@@ -4,8 +4,8 @@ const express = require("express");
 const router = express.Router();
 
 const accounts = require("./controllers/accounts.js");
-const memberdashboard = require("./controllers/memberdashboard.js")
-//const assessmentStore = require("./models/assessment-store.js");
+const memberdashboard = require("./controllers/memberdashboard.js");
+const assessmentCollection = require("./controllers/assessmentCollection.js");
 
 router.get("/", accounts.index);
 router.get("/login", accounts.login);
@@ -15,5 +15,6 @@ router.post("/register", accounts.register);
 router.post("/authenticate", accounts.authenticate);
 
 router.get("/memberdashboard", memberdashboard.index);
+router.get("/assessmentCollection/:id", assessmentCollection.index)
 
 module.exports = router;
