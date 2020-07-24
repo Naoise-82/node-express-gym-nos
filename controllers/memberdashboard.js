@@ -3,6 +3,7 @@
 const logger = require("../utils/logger");
 const uuid = require("uuid");
 const accounts = require("./accounts.js");
+const assessmentStore = require("../models/assessment-store.js");
 
 const memberDashboard = {
   index(request, response) {
@@ -10,7 +11,7 @@ const memberDashboard = {
     const loggedInUser = accounts.getCurrentUser(request);
     const viewData = {
       title: "Member Dashboard",
-      assessments: assessmentStore.getUserAssessments
+      assessments: assessmentStore.getUserAssessments(loggedInUser.id),
     };
     response.render("memberdashboard", viewData);
   }

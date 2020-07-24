@@ -5,6 +5,7 @@ const router = express.Router();
 
 const accounts = require("./controllers/accounts.js");
 const memberdashboard = require("./controllers/memberdashboard.js")
+//const assessmentStore = require("./models/assessment-store.js");
 
 router.get("/", accounts.index);
 router.get("/login", accounts.login);
@@ -14,4 +15,5 @@ router.post("/register", accounts.register);
 router.post("/authenticate", accounts.authenticate);
 
 router.get("/memberdashboard", memberdashboard.index);
+
 module.exports = router;
