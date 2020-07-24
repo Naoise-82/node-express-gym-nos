@@ -13,7 +13,7 @@ const assessments = {
         assessmentCollectionId
       )
     };
-    response.render("AssessmentCollection", viewdata)
+    response.render("AssessmentCollection", viewdata);
   }
 };
 
