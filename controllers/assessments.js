@@ -4,7 +4,7 @@ const logger = require("../utils/logger");
 const uuid = require("uuid");
 const assessmentStore = require("../models/assessment-store.js");
 
-const assessmentCollection = {
+const assessments = {
   index(request, response) {
     const assessmentCollectionId = request.params.id;
     logger.info("AssessmentCollctionId = " + assessmentCollectionId);
@@ -17,4 +17,4 @@ const assessmentCollection = {
   }
 };
 
-module.exports = assessmentCollection;
+module.exports = assessments;
