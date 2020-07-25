@@ -4,16 +4,16 @@ const logger = require("../utils/logger");
 const uuid = require("uuid");
 const assessmentStore = require("../models/assessment-store");
 
-const assessmentList = {
+const assessments = {
   index(request, response) {
-    const assessmentListId = request.params.id;
-    logger.info("AssessmentListId = " + assessmentListId);
+    const assessmentCollectionId = request.params.id;
+    logger.info("Assessment Collection Id = " + assessmentCollectionId);
     const viewdata = {
-      title: "User Dashboard",
-      assessmentList: assessmentStore.getUserAssessments(assessmentListId)
+      title: "User Assessments",
+      assessmentList: assessmentStore.getUserAssessments(assessmentCollectionId)
     };
-    response.render("assessmentList", viewdata);
+    response.render("assessmentCollection", viewdata);
   }
 };
 
-module.exports = assessmentList;
+module.exports = assessments;
