@@ -43,7 +43,7 @@ const accounts = {
   authenticate(request, response) {
     const user = userstore.getUserByEmail(request.body.email);
     if (user.password === request.body.password) {
-      response.cookie('playlist', user.email);
+      response.cookie('assessments', user.email);
       logger.info(`logging in ${user.email}`);
       response.redirect('/memberdashboard');
     } else {
