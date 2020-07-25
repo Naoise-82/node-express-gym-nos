@@ -43,7 +43,7 @@ const accounts = {
   authenticate(request, response) {
     const user = userstore.getUserByEmail(request.body.email);
     if (user.password === request.body.password) {
-      response.cookie('assessments', user.email);
+      response.cookie('playlist', user.email);
       logger.info(`logging in ${user.email}`);
       response.redirect('/memberdashboard');
     } else {
@@ -52,7 +52,7 @@ const accounts = {
   },
 
   getCurrentUser(request) {
-    const userEmail = request.cookies.assessments;
+    const userEmail = request.cookies.playlist;
     return userstore.getUserByEmail(userEmail);
   },
 };

@@ -9,10 +9,11 @@ const memberDashboard = {
   index(request, response) {
     logger.info("rendering member dashboard");
     const loggedInUser = accounts.getCurrentUser(request);
+    //logger.info("Current user = " + loggedInUser.firstName);
     const viewData = {
       title: "Member Dashboard",
-      assessmentList: assessmentStore.getUserAssessments(loggedInUser.id),
-      //assessments: assessmentStore.getAllAssessments()
+      //assessmentList: assessmentStore.getUserAssessments(loggedInUser.id)
+      assessments: assessmentStore.getAllAssessments()
     };
     response.render("memberdashboard", viewData);
   }
