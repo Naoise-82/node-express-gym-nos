@@ -9,9 +9,8 @@ const assessments = {
     const assessmentCollectionId = request.params.id;
     logger.info("AssessmentCollctionId = " + assessmentCollectionId);
     const viewdata = {
-      assessmentCollection: assessmentStore.getUserAssessments(
-        assessmentCollectionId
-      )
+      title: "User Dashboard",
+      assessments: assessmentStore.getUserAssessments(assessmentCollectionId)
     };
     response.render("AssessmentCollection", viewdata);
   }

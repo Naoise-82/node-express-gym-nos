@@ -13,9 +13,9 @@ const assessmentStore = {
     return this.store.findBy(this.collection, { userid: userid });
   },
 
-  /*getAllPlaylists() {
+  getAllAssessments() {
     return this.store.findAll(this.collection);
-  },*/
+  },
 
   getAssessment(id) {
     return this.store.findOneBy(this.collection, { id: id });
