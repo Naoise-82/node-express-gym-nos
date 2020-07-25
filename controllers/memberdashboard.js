@@ -11,7 +11,8 @@ const memberDashboard = {
     const loggedInUser = accounts.getCurrentUser(request);
     const viewData = {
       title: "Member Dashboard",
-      assessmentCollection: assessmentStore.getUserAssessments(loggedInUser.id),
+      //assessmentList: assessmentStore.getUserAssessments(loggedInUser.id),
+      assessments: assessmentStore.getAllAssessments()
     };
     response.render("memberdashboard", viewData);
   }

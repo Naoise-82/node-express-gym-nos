@@ -3,16 +3,13 @@
     {
       "id": "1",
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "assessment": {
-        "id": "2",
-        "date": "23/07/2020",
-        "weight": 75,
-        "chest": 45,
-        "thigh": 20,
-        "upperarm": 15,
-        "waist": 32,
-        "trainercomment": "Great!"
-      }
+      "date": "23/07/2020",
+      "weight": 75,
+      "chest": 45,
+      "thigh": 20,
+      "upperarm": 15,
+      "waist": 32,
+      "trainercomment": "Great!"
     }
   ]
 }
