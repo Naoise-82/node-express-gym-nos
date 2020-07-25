@@ -11,10 +11,10 @@ const memberDashboard = {
     const loggedInUser = accounts.getCurrentUser(request);
     const viewData = {
       title: "Member Dashboard",
-      assessmentList: assessmentStore.getUserAssessments(loggedInUser.id),
+      assessmentlist: assessmentStore.getAllAssessments(loggedInUser.id),
     };
     response.render("memberdashboard", viewData);
   }
-}
+};
 
 module.exports = memberDashboard;

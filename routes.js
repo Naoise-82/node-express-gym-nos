@@ -15,6 +15,5 @@ router.post("/register", accounts.register);
 router.post("/authenticate", accounts.authenticate);
 
 router.get("/memberdashboard", memberdashboard.index);
-router.get("/assessments/:id", assessments.index);
 
 module.exports = router;
