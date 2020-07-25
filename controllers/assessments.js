@@ -2,7 +2,7 @@
 
 const logger = require("../utils/logger");
 const uuid = require("uuid");
-const assessmentStore = require("../models/assessment-store.js");
+const assessmentStore = require("../models/assessment-store");
 
 const assessments = {
   index(request, response) {
