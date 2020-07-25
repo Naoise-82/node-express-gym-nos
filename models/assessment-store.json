@@ -1,30 +1,27 @@
 {
   "assessmentCollection": [
+    "userid": "3ad52697-6d98-4d80-8273-084de55a86c0"
     {
-      "assessments": [
-        {
-          "id": 2,
-          "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-          "date": "23/07/2020",
-          "weight": 75,
-          "chest": 45,
-          "thigh": 20,
-          "upperarm": 15,
-          "waist": 32,
-          "trainercomment": "Great!"
-        },
-        {
-          "id": 3,
-          "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-          "date": "24/07/2020",
-          "weight": 76,
-          "chest": 43,
-          "thigh": 21,
-          "upperarm": 14,
-          "waist": 31,
-          "trainercomment": "Better!"
-        }
-      ]
+      "id": 2,
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "date": "23/07/2020",
+      "weight": 75,
+      "chest": 45,
+      "thigh": 20,
+      "upperarm": 15,
+      "waist": 32,
+      "trainercomment": "Great!"
+    },
+    {
+      "id": 3,
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "date": "24/07/2020",
+      "weight": 76,
+      "chest": 43,
+      "thigh": 21,
+      "upperarm": 14,
+      "waist": 31,
+      "trainercomment": "Better!"
     }
   ]
 }
