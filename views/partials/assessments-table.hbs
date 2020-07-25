@@ -18,18 +18,20 @@
       </tr>
     </thead>
     <tbody>
+      {{#each assessments}}
           <tr>
+            <td class="ui item"> {{date}} </td>
+            <td class="ui item"> {{weight}} </td>
+            <td class="ui item"> {{chest}} </td>
+            <td class="ui item"> {{thigh}}</td>
+            <td class="ui item"> {{upperarm}}</td>
+            <td class="ui item"> {{waist}}</td>
+            <td class="ui item"> {{hips}}</td>
             <td class="ui item"> </td>
-            <td class="ui item"> </td>
-            <td class="ui item"> </td>
-            <td class="ui item"> </td>
-            <td class="ui item"> </td>
-            <td class="ui item"> </td>
-            <td class="ui item"> </td>
-            <td class="ui item"> </td>
-            <td class="ui item"> </td>
+            <td class="ui item"> {{trainercomment}}</td>
             <td><a href="#"><button class="ui tiny red button">Delete</button></a></td>
           </tr>
+      {{/each}}
     </tbody>
   </table>
 </section>

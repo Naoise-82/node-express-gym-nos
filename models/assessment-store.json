@@ -9,7 +9,20 @@
       "thigh": 20,
       "upperarm": 15,
       "waist": 32,
+      "hips": 34,
       "trainercomment": "Great!"
+    },
+    {
+      "id": "2",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "date": "24/07/2020",
+      "weight": 75.5,
+      "chest": 44.8,
+      "thigh": 20,
+      "upperarm": 15,
+      "waist": 32,
+      "hips": 34,
+      "trainercomment": "Better!"
     }
   ]
 }
