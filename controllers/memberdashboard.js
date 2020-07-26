@@ -13,7 +13,7 @@ const memberDashboard = {
     const viewData = {
       title: "Member Dashboard",
       //assessmentList: assessmentStore.getUserAssessments(loggedInUser.id)
-      assessments: assessmentStore.getAllAssessments()
+      //assessments: assessmentStore.getAllAssessments()
     };
     response.render("memberdashboard", viewData);
   }
