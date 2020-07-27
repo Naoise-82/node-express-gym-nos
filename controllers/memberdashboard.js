@@ -12,8 +12,9 @@ const memberDashboard = {
     logger.info("Current user = " + loggedInUser.firstName);
     const viewData = {
       title: "Member Dashboard",
-      //assessmentList: assessmentStore.getUserAssessments(loggedInUser.id)
+      assessments: assessmentStore.getUserAssessments(loggedInUser.id),
       //assessments: assessmentStore.getAllAssessments()
+      loggedInUser: loggedInUser
     };
     response.render("memberdashboard", viewData);
   }
