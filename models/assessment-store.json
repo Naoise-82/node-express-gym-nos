@@ -1,30 +1,6 @@
 {
   "assessmentCollection": [
     {
-      "id": "1",
-      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "date": "23/07/2020",
-      "weight": 75,
-      "chest": 45,
-      "thigh": 20,
-      "upperarm": 15,
-      "waist": 32,
-      "hips": 34,
-      "trainercomment": "Great!"
-    },
-    {
-      "id": "2",
-      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "date": "24/07/2020",
-      "weight": 75.5,
-      "chest": 44.8,
-      "thigh": 20,
-      "upperarm": 15,
-      "waist": 32,
-      "hips": 34,
-      "trainercomment": "Homer!"
-    },
-    {
       "id": "3",
       "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
       "date": "27/07/2020",

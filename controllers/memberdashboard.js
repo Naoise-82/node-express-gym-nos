@@ -13,11 +13,35 @@ const memberDashboard = {
     const viewData = {
       title: "Member Dashboard",
       assessments: assessmentStore.getUserAssessments(loggedInUser.id),
-      //assessments: assessmentStore.getAllAssessments()
       loggedInUser: loggedInUser
     };
     response.render("memberdashboard", viewData);
+  },
+
+  addAssessment(request, response) {
+    const loggedInUser = accounts.getCurrentUser(request);
+    const assessment = {
+      id: uuid.v1(),
+      userid: loggedInUser.id,
+      date: request.body.date,
+      weight: request.body.weight,
+      chest: request.body.chest,
+      thigh: request.body.thigh,
+      upperarm: request.body.upperarm,
+      waist: request.body.waist,
+      hips: request.body.hips
+    };
+    assessmentStore.addAssessment(assessment);
+    response.redirect("/memberdashboard");
+  },
+
+  removeAssessment(request, response) {
+    const assessmentId = request.params.id;
+    logger.info(`Removing Assessment ${assessmentId}`);
+    assessmentStore.removeAssessment(assessmentId);
+    response.redirect("/memberdashboard");
   }
+
 };
 
 module.exports = memberDashboard;

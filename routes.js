@@ -15,4 +15,7 @@ router.post("/authenticate", accounts.authenticate);
 
 router.get("/memberdashboard", memberdashboard.index);
 
+router.post("/memberdashboard/addassessment", memberdashboard.addAssessment);
+router.get("/memberdashboard/removeassessment/:id", memberdashboard.removeAssessment);
+
 module.exports = router;
