@@ -9,7 +9,6 @@ const memberDashboard = {
   index(request, response) {
     logger.info("rendering member dashboard");
     const loggedInUser = accounts.getCurrentUser(request);
-    logger.info("Current user = " + loggedInUser.firstName);
     const viewData = {
       title: "Member Dashboard",
       assessments: assessmentStore.getUserAssessments(loggedInUser.id),
@@ -20,10 +19,22 @@ const memberDashboard = {
 
   addAssessment(request, response) {
     const loggedInUser = accounts.getCurrentUser(request);
+
+    // create a date object called "timestamp" with the current date and time
+    const timestamp = new Date();
+
+    //convert the relevant date and time data from the timestamp into a simplified string
+    const date = timestamp.getFullYear()-2000 + "/"
+    + ("0" + (timestamp.getMonth()+1)).slice(-2) + "/" // add a leading 0 & shorten to two characters (if needed)
+    + ("0" + timestamp.getDate()).slice(-2) + " "
+    + ("0" + timestamp.getHours()).slice(-2) + ":"
+    + ("0" + timestamp.getMinutes()).slice(-2) + ":"
+    + ("0" + timestamp.getSeconds()).slice(-2)
+
     const assessment = {
       id: uuid.v1(),
       userid: loggedInUser.id,
-      date: request.body.date,
+      date: date,
       weight: request.body.weight,
       chest: request.body.chest,
       thigh: request.body.thigh,
