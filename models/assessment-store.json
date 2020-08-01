@@ -1,6 +1,17 @@
 {
   "assessmentCollection": [
     {
+      "id": "b6ae1220-d443-11ea-a630-530206ce1c38",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "date": "20/08/01 23:09:48",
+      "weight": "50",
+      "chest": "50",
+      "thigh": "50",
+      "upperarm": "50",
+      "waist": "50",
+      "hips": "50"
+    },
+    {
       "id": "3",
       "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
       "date": "27/07/2020",

@@ -4,6 +4,7 @@ const logger = require("../utils/logger");
 const uuid = require("uuid");
 const accounts = require("./accounts.js");
 const assessmentStore = require("../models/assessment-store");
+const analytics = require("../utils/analytics");
 
 const memberDashboard = {
   index(request, response) {
@@ -12,7 +13,8 @@ const memberDashboard = {
     const viewData = {
       title: "Member Dashboard",
       assessments: assessmentStore.getUserAssessments(loggedInUser.id),
-      loggedInUser: loggedInUser
+      loggedInUser: loggedInUser,
+      //bmi: analytics.calculateBMI(),
     };
     response.render("memberdashboard", viewData);
   },
@@ -23,7 +25,7 @@ const memberDashboard = {
     // create a date object called "timestamp" with the current date and time
     const timestamp = new Date();
 
-    //convert the relevant date and time data from the timestamp into a simplified string
+    //take the relevant date and time data from the timestamp and compile short string
     const date = timestamp.getFullYear()-2000 + "/"
     + ("0" + (timestamp.getMonth()+1)).slice(-2) + "/" // add a leading 0 & shorten to two characters (if needed)
     + ("0" + timestamp.getDate()).slice(-2) + " "

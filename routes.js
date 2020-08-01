@@ -5,6 +5,7 @@ const router = express.Router();
 
 const accounts = require("./controllers/accounts.js");
 const memberdashboard = require("./controllers/memberdashboard.js");
+const analytics = require("./utils/analytics");
 
 router.get("/", accounts.index);
 router.get("/login", accounts.login);
