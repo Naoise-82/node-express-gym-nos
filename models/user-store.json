@@ -5,7 +5,7 @@
       "lastName": "Simpson",
       "email": "homer@simpson.com",
       "height": 1.8,
-      "startingWeight": 75,
+      "startingWeight": 100,
       "password": "secret",
       "id": "3ad52697-6d98-4d80-8273-084de55a86c0"
     },
@@ -27,7 +27,7 @@
       "firstName": "Barney",
       "lastName": "Gumble",
       "email": "barney@gumble.com",
-      "password": "barey",
+      "password": "barney",
       "id": "1235498746513"
     }
   ]

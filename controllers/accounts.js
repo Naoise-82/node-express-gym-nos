@@ -20,7 +20,7 @@ const accounts = {
   },
 
   logout(request, response) {
-    response.cookie("playlist", "");
+    response.cookie("playwebgym", "");
     response.redirect("/");
   },
 
@@ -42,7 +42,7 @@ const accounts = {
   authenticate(request, response) {
     const user = userstore.getUserByEmail(request.body.email);
     if (user) {
-      response.cookie("playlist", user.email);
+      response.cookie("playwebgym", user.email);
       logger.info(`logging in ${user.email}`);
       response.redirect("/memberdashboard");
     } else {
@@ -51,7 +51,7 @@ const accounts = {
   },
 
   getCurrentUser(request) {
-    const userEmail = request.cookies.playlist;
+    const userEmail = request.cookies.playwebgym;
     return userstore.getUserByEmail(userEmail);
   }
 };

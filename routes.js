@@ -3,8 +3,9 @@
 const express = require("express");
 const router = express.Router();
 
-const accounts = require("./controllers/accounts.js");
 const memberdashboard = require("./controllers/memberdashboard.js");
+const accounts = require("./controllers/accounts.js");
+
 const analytics = require("./utils/analytics");
 
 router.get("/", accounts.index);
