@@ -1,15 +1,26 @@
 {
   "assessmentCollection": [
     {
-      "id": "b6ae1220-d443-11ea-a630-530206ce1c38",
+      "id": "9f9b5920-d511-11ea-9304-9364d2ff9acf",
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "date": "20/08/01 23:09:48",
-      "weight": "50",
-      "chest": "50",
-      "thigh": "50",
-      "upperarm": "50",
-      "waist": "50",
-      "hips": "50"
+      "date": "20/08/02 23:43:45",
+      "weight": "120",
+      "chest": "",
+      "thigh": "",
+      "upperarm": "",
+      "waist": "",
+      "hips": ""
+    },
+    {
+      "id": "9c6386b0-d511-11ea-9304-9364d2ff9acf",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "date": "20/08/02 23:43:40",
+      "weight": "150",
+      "chest": "",
+      "thigh": "",
+      "upperarm": "",
+      "waist": "",
+      "hips": ""
     },
     {
       "id": "3",

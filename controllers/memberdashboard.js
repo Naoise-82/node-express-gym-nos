@@ -15,6 +15,7 @@ const memberDashboard = {
       assessments: assessmentStore.getUserAssessments(loggedInUser.id),
       loggedInUser: loggedInUser,
       bmi: analytics.calculateBMI(loggedInUser),
+      category: analytics.bmiCategory(loggedInUser)
     };
     response.render("memberdashboard", viewData);
   },
