@@ -4,8 +4,15 @@ const logger = require("../utils/logger.js");
 const accounts = require("../controllers/accounts.js");
 const assessmentStore = require("../models/assessment-store");
 const userStore = require("../models/user-store");
+const tolerance = 0.2;
 
 const analytics = {
+
+  getCurrentWeight(loggedInUser) {
+    const assessments = assessmentStore.getUserAssessments(loggedInUser.id);
+    const currentWeight = assessments[0].weight;
+    return currentWeight;
+  },
 
   calculateBMI(loggedInUser) {
 
@@ -16,7 +23,7 @@ const analytics = {
      weight = assessments[0].weight;
     } else weight = loggedInUser.startingWeight;
 
-    const height = loggedInUser.height;
+    const height = (loggedInUser.height)/100;
    
     return Math.round((weight/(height * height)*100))/100;
   },
@@ -43,6 +50,35 @@ const analytics = {
       return "Very Severely Obese";
     }
   },
+
+  calculateIdealBodyWeight(loggedInUser) {
+
+    const assessments = assessmentStore.getUserAssessments(loggedInUser.id);
+    let weight = 0;
+
+    if (assessments.length > 0) {
+      weight = assessments[0].weight;
+    } else weight = loggedInUser.startingWeight;
+
+    let idealBodyWeight = 1;
+
+    if (loggedInUser.gender.toLowerCase() === "male") {
+      idealBodyWeight = Math.round((50.0 + 0.9 * (loggedInUser.height - 152))*100)/100;
+    } else if (loggedInUser.gender.toLowerCase() === "female") {
+      idealBodyWeight = Math.round((45.5 + 0.9 * (loggedInUser.height - 152))*100)/100;
+    }
+    return idealBodyWeight;
+  },
+
+  checkIdealBodyWeight(loggedInUser) {
+    const assessments = assessmentStore.getUserAssessments(loggedInUser.id);
+    let weightIndicator = false;
+
+    if (Math.abs(assessments[0].weight - this.calculateIdealBodyWeight(loggedInUser)) <= tolerance) {
+      weightIndicator = true;
+    }
+    return weightIndicator;
+  }
 
 };
 

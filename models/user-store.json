@@ -4,8 +4,9 @@
       "firstName": "Homer",
       "lastName": "Simpson",
       "email": "homer@simpson.com",
-      "height": 1.8,
-      "startingWeight": 110,
+      "gender": "male",
+      "height": 180,
+      "startingWeight": 80,
       "password": "secret",
       "id": "3ad52697-6d98-4d80-8273-084de55a86c0"
     },
@@ -13,6 +14,9 @@
       "firstName": "marge",
       "lastName": "simpson",
       "email": "marge@simpson.com",
+      "gender": "female",
+      "height": 150,
+      "startingWeight": 60,
       "password": "secret",
       "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
     },

@@ -15,7 +15,10 @@ const memberDashboard = {
       assessments: assessmentStore.getUserAssessments(loggedInUser.id),
       loggedInUser: loggedInUser,
       bmi: analytics.calculateBMI(loggedInUser),
-      category: analytics.bmiCategory(loggedInUser)
+      category: analytics.bmiCategory(loggedInUser),
+      idealBodyWeight: analytics.calculateIdealBodyWeight(loggedInUser),
+      currentWeight: analytics.getCurrentWeight(loggedInUser),
+      weightIndicator: analytics.checkIdealBodyWeight(loggedInUser)
     };
     response.render("memberdashboard", viewData);
   },

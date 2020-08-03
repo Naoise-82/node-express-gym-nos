@@ -3,7 +3,7 @@
     <div class="ui horizontal segments">
         <div class="ui segment">
             <div style="text-align: center;"><i class="massive blue ui user icon"></i></div>
-            <h3 class="ui centered header">{{loggedInUser.firstName}} {{loggedInUser.lastName}}</h3>
+            <h3 class="ui centered header">Member:<br>{{loggedInUser.firstName}} {{loggedInUser.lastName}}</h3>
         </div>
         <div class="ui segment">
             <div style="text-align: center;"><i class="massive ui heartbeat icon"></i></div>
@@ -14,8 +14,9 @@
             <h3 class="ui centered header">Current BMI Category:<br> {{category}} </h3>
         </div>
         <div class="ui segment">
-            <div style="text-align: center;"> <!-- Ideal weight indicator if statement goes here --><i class=" massive red weight icon"></i></div>
-            <h3 class="ui centered header">Ideal Body Weight: ?? kg <br>Current Weight: ?? kg</h3>
+            <div style="text-align: center;"> {{#if weightIndicator}} <i class="massive green weight icon"></i>
+            {{else}} <i class=" massive red weight icon"></i> {{/if}}</div>
+            <h3 class="ui centered header">Ideal Body Weight: {{idealBodyWeight}} kg <br>Current Weight: {{currentWeight}} kg</h3>
         </div>
     </div>
 </section>
