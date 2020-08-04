@@ -1,0 +1,12 @@
+{
+  "trainers": [
+    {
+      "firstName": "Rock",
+      "lastName": "Strongo",
+      "gender": "Male",
+      "email": "rock@strongo.com",
+      "password": "rock",
+      "id": "54g6sd5gds64g2v"
+    }
+  ]
+}

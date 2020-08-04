@@ -10,7 +10,11 @@ const analytics = {
 
   getCurrentWeight(loggedInUser) {
     const assessments = assessmentStore.getUserAssessments(loggedInUser.id);
-    const currentWeight = assessments[0].weight;
+    let currentWeight = 0;
+    if (assessments.length > 0) {
+      currentWeight = assessments[0].weight;
+    } else currentWeight = loggedInUser.startingWeight;
+
     return currentWeight;
   },
 
@@ -74,7 +78,7 @@ const analytics = {
     const assessments = assessmentStore.getUserAssessments(loggedInUser.id);
     let weightIndicator = false;
 
-    if (Math.abs(assessments[0].weight - this.calculateIdealBodyWeight(loggedInUser)) <= tolerance) {
+    if (Math.abs(this.getCurrentWeight(loggedInUser) - this.calculateIdealBodyWeight(loggedInUser)) <= tolerance) {
       weightIndicator = true;
     }
     return weightIndicator;

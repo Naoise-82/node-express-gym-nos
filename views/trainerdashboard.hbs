@@ -1,0 +1,27 @@
+{{> trainermenu id="trainerdashboard"}}
+
+<section class="ui segment">
+    <div>
+        <h2><i class="id card icon"></i> {{trainer.firstName}} {{trainer.lastName}}</h2>
+    </div>
+</section>
+
+<section class="ui segment">
+    <h2 class="ui header">
+        <i class="ui users icon"></i> Current Member List
+    </h2>
+    {{#each members}}
+    <section class="ui segment">
+        <h3 class="ui header">
+            <i class="ui user icon"></i> {{firstName}} {{lastName}}
+        </h3>
+        <h4 class="ui header"> Total Assessments: {{}}</h4>
+        <a href="/trainercommentpage" class="ui icon button">
+            <i title="View Assessments" class="icon folder open"></i>
+        </a>
+        <a href="/trainerdashboard/deletemember/" class="ui icon button">
+            <i title="Delete this Member" class="ui black trash alternate icon"></i>
+        </a>
+    </section>
+    {{/each}}
+</section>
