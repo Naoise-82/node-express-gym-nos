@@ -1,10 +1,12 @@
 "use strict";
 
-const userstore = require("../models/user-store");
+const userStore = require("../models/user-store");
+const trainerStore = require("../models/trainer-store");
 const logger = require("../utils/logger");
 const uuid = require("uuid");
 
 const accounts = {
+
   index(request, response) {
     const viewData = {
       title: "Login or Signup"
@@ -17,6 +19,13 @@ const accounts = {
       title: "Login to the Service"
     };
     response.render("login", viewData);
+  },
+
+  trainerLogin(request, response) {
+    const viewData = {
+      title: "Login to the Service"
+    };
+    response.render("trainerLogin", viewData);
   },
 
   logout(request, response) {
@@ -34,14 +43,14 @@ const accounts = {
   register(request, response) {
     const user = request.body;
     user.id = uuid.v1();
-    userstore.addUser(user);
+    userStore.addUser(user);
     logger.info(`registering ${user.email}`);
     response.redirect("/");
   },
 
   authenticate(request, response) {
-    const user = userstore.getUserByEmail(request.body.email);
-    if (user) {
+    const user = userStore.getUserByEmail(request.body.email);
+    if (request.body.password === user.password) {
       response.cookie("playwebgym", user.email);
       logger.info(`logging in ${user.email}`);
       response.redirect("/memberdashboard");
@@ -50,10 +59,27 @@ const accounts = {
     }
   },
 
+  trainerAuthenticate(request, response) {
+    const trainer = trainerStore.getTrainerByEmail(request.body.email);
+    if (request.body.password === trainer.password) {
+      response.cookie("playwebgym", trainer.email);
+      logger.info(`logging in ${trainer.email}`);
+      response.redirect("/trainerdashboard");
+    } else {
+      response.redirect("/trainerlogin");
+    }
+  },
+
   getCurrentUser(request) {
     const userEmail = request.cookies.playwebgym;
-    return userstore.getUserByEmail(userEmail);
+    return userStore.getUserByEmail(userEmail);
+  },
+
+  getCurrentTrainer(request) {
+    const trainerEmail = request.cookies.playwebgym;
+    return trainerStore.getTrainerByEmail(trainerEmail);
   }
+
 };
 
 module.exports = accounts;

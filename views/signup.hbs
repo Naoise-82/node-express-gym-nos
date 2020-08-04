@@ -1,0 +1,43 @@
+{{> welcomemenu id="signup"}}
+
+<div class="ui two column grid basic middle aligned segment">
+    <div class="column">
+        <form class="ui stacked segment form" action="/register" method="POST">
+            <h3 class="ui header">Sign Up To The Gym Here:</h3>
+            <div class="two fields">
+                <div class="field">
+                    <label>First Name</label>
+                    <input placeholder="First Name" type="text" name="firstName">
+                </div>
+                <div class="field">
+                    <label>Last Name</label>
+                    <input placeholder="Last Name" type="text" name="lastName">
+                </div>
+                <div class="field">
+                    <label>Gender</label>
+                    <input placeholder="Gender" type="text" name="gender">
+                </div>
+            </div>
+            <div class="field">
+                <label>Height (cm)</label>
+                <input placeholder="Height (cm)" type="number" step="0.01" name="height">
+            </div>
+            <div class="field">
+                <label>Starting Weight (kg)</label>
+                <input placeholder="Starting Weight (cm)" type="number" step="0.01" name="startingWeight">
+            </div>
+            <div class="field">
+                <label>Email</label>
+                <input placeholder="Email" type="text" name="email">
+            </div>
+            <div class="field">
+                <label>Password</label>
+                <input type="password" name="password">
+            </div>
+            <button class="ui blue submit button">Submit</button>
+        </form>
+    </div>
+    <div class="column">
+        <i class="massive blue user plus icon"></i>
+    </div>
+</div>
