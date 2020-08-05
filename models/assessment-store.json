@@ -9,7 +9,8 @@
       "thigh": "",
       "upperarm": "",
       "waist": "",
-      "hips": ""
+      "hips": "",
+      "comment": "Making progress!"
     },
     {
       "id": "3",
@@ -21,7 +22,7 @@
       "upperarm": 15,
       "waist": 32,
       "hips": 34,
-      "trainercomment": "Marge!"
+      "comment": "Marge!"
     }
   ]
 }

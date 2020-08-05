@@ -30,6 +30,12 @@ const assessmentStore = {
     const assessment = this.getAssessment(id);
     this.store.remove(this.collection, assessment);
     this.store.save();
+  },
+
+  setComment(id, comment) {
+    const assessment = this.getAssessment(id);
+    assessment.comment = comment;
+    this.store.save();
   }
 };
 

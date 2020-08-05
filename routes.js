@@ -5,6 +5,7 @@ const router = express.Router();
 
 const memberdashboard = require("./controllers/memberdashboard.js");
 const trainerdashboard = require("./controllers/trainerdashboard.js");
+const trainercommentpage = require("./controllers/trainercommentpage");
 const accounts = require("./controllers/accounts.js");
 
 const analytics = require("./utils/analytics");
@@ -23,5 +24,8 @@ router.get("/trainerdashboard", trainerdashboard.index);
 
 router.post("/memberdashboard/addassessment", memberdashboard.addAssessment);
 router.get("/memberdashboard/removeassessment/:id", memberdashboard.removeAssessment);
+
+router.get("/trainercommentpage/:id", trainercommentpage.index);
+router.post("/trainercommentpage/addcomment/:id", trainercommentpage.addComment);
 
 module.exports = router;
