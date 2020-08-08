@@ -1,0 +1,39 @@
+{{> membermenu id='updatedetails' }}
+
+<section class="ui segment">
+    <h2 class="ui header"><i class="blue ui user icon"></i> {{user.firstName}} {{user.lastName}} </h2>
+
+    <div class="ui two column grid basic middle aligned segment">
+        <div class="column">
+            <form class="ui segment form" action="/updatemember/{{user.id}}" method="POST">
+                <h3 class="ui header">Update Details</h3>
+                <div class="two fields">
+                    <div class="field">
+                        <label>First Name</label>
+                        <input placeholder="Current: {{user.firstName}}" type="text" name="firstName">
+                    </div>
+                    <div class="field">
+                        <label>Last Name</label>
+                        <input placeholder="Current: {{user.lastName}}" type="text" name="lastName">
+                    </div>
+                    <div class="field">
+                        <label>Gender</label>
+                        <input placeholder="Current: {{user.gender}}" type="text" name="gender">
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Email</label>
+                    <input placeholder="Current: {{user.email}}" type="text" name="email">
+                </div>
+                <div class="field">
+                    <label>Password</label>
+                    <input placeholder="enter a new password" type="password" name="password">
+                </div>
+                <button class="ui blue submit button">Update</button>
+            </form>
+        </div>
+        <div class="column">
+            <i class="massive clipboard list icon"></i>
+        </div>
+    </div>
+</section>

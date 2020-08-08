@@ -48,6 +48,7 @@ const accounts = {
     response.redirect("/");
   },
 
+
   authenticate(request, response) {
     const user = userStore.getUserByEmail(request.body.email);
     if (request.body.password === user.password) {

@@ -6,6 +6,7 @@ const router = express.Router();
 const memberdashboard = require("./controllers/memberdashboard.js");
 const trainerdashboard = require("./controllers/trainerdashboard.js");
 const trainercommentpage = require("./controllers/trainercommentpage");
+const updatedetails = require("./controllers/updatedetails");
 const accounts = require("./controllers/accounts.js");
 
 const analytics = require("./utils/analytics");
@@ -18,6 +19,9 @@ router.get("/logout", accounts.logout);
 router.post("/register", accounts.register);
 router.post("/authenticate", accounts.authenticate);
 router.post("/trainerauthenticate", accounts.trainerAuthenticate);
+
+router.get("/updatedetails", updatedetails.index);
+router.post("/updatemember/:id", updatedetails.updateMember);
 
 router.get("/memberdashboard", memberdashboard.index);
 router.get("/trainerdashboard", trainerdashboard.index);

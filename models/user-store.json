@@ -11,10 +11,10 @@
       "id": "1f5f28f0-d696-11ea-b890-190be6cf5416"
     },
     {
-      "firstName": "Homer",
-      "lastName": "Simpson",
+      "firstName": "HOMER",
+      "lastName": "SIMPSON",
       "email": "homer@simpson.com",
-      "gender": "male",
+      "gender": "MALE",
       "height": 180,
       "startingWeight": 80,
       "password": "secret",
