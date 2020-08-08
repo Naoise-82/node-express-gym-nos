@@ -10,11 +10,12 @@ const trainerCommentPage = {
     logger.info("rendering trainer comment page");
     const loggedInTrainer = accounts.getCurrentTrainer(request);
     const memberId = request.params.id;
+    const assessments = assessmentStore.getUserAssessments(memberId);
     const viewData = {
       title: "Trainer Comment Page",
       trainer: loggedInTrainer,
       member: userStore.getUserById(memberId),
-      assessments: assessmentStore.getUserAssessments(memberId)
+      assessments: assessments,
     };
     response.render("trainercommentpage", viewData);
   },

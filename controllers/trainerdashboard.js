@@ -18,7 +18,12 @@ const trainerDashboard = {
       members: members
     };
     response.render("trainerdashboard", viewData);
-  }
+  },
+
+
+
+
+
 }
 
 module.exports = trainerDashboard;

@@ -7,16 +7,16 @@
         </div>
         <div class="ui segment">
             <div style="text-align: center;"><i class="massive ui heartbeat icon"></i></div>
-            <h3 class="ui centered header">Current BMI:<br> {{bmi}} </h3>
+            <h3 class="ui centered header">Current BMI:<br> {{stats.bmi}} </h3>
         </div>
         <div class="ui segment">
             <div style="text-align: center;"><i class="ui massive user md icon"></i></div>
-            <h3 class="ui centered header">Current BMI Category:<br> {{category}} </h3>
+            <h3 class="ui centered header">Current BMI Category:<br> {{stats.bmiCategory}} </h3>
         </div>
         <div class="ui segment">
-            <div style="text-align: center;"> {{#if weightIndicator}} <i class="massive green weight icon"></i>
+            <div style="text-align: center;"> {{#if stats.isIdealBodyWeight}} <i class="massive green weight icon"></i>
             {{else}} <i class=" massive red weight icon"></i> {{/if}}</div>
-            <h3 class="ui centered header">Ideal Body Weight: {{idealBodyWeight}} kg <br>Current Weight: {{currentWeight}} kg</h3>
+            <h3 class="ui centered header">Ideal Body Weight: {{stats.idealBodyWeight}} kg <br>Current Weight: {{stats.weight}} kg</h3>
         </div>
     </div>
 </section>

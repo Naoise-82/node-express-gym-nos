@@ -10,15 +10,12 @@ const memberDashboard = {
   index(request, response) {
     logger.info("rendering member dashboard");
     const loggedInUser = accounts.getCurrentUser(request);
+    const stats = analytics.generateMemberStats(loggedInUser);
     const viewData = {
       title: "Member Dashboard",
-      assessments: assessmentStore.getUserAssessments(loggedInUser.id),
       loggedInUser: loggedInUser,
-      bmi: analytics.calculateBMI(loggedInUser),
-      category: analytics.bmiCategory(loggedInUser),
-      idealBodyWeight: analytics.calculateIdealBodyWeight(loggedInUser),
-      currentWeight: analytics.getCurrentWeight(loggedInUser),
-      weightIndicator: analytics.checkIdealBodyWeight(loggedInUser)
+      stats: stats,
+      assessments: assessmentStore.getUserAssessments(loggedInUser.id),
     };
     response.render("memberdashboard", viewData);
   },

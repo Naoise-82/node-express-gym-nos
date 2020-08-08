@@ -4,9 +4,32 @@ const logger = require("../utils/logger.js");
 const accounts = require("../controllers/accounts.js");
 const assessmentStore = require("../models/assessment-store");
 const userStore = require("../models/user-store");
+const memberStats = require("../utils/memberstats");
 const tolerance = 0.2;
 
 const analytics = {
+
+  getAssessmentCount(memberId) {
+    const assessments = assessmentStore.getUserAssessments(memberId);
+    const assessmentCount = assessments.length
+
+    return assessmentCount;
+  },
+
+  generateMemberStats(loggedInUser) {
+    const assessments = assessmentStore.getUserAssessments(loggedInUser.id);
+
+    memberStats.weight = this.getCurrentWeight(loggedInUser);
+    memberStats.bmi = this.calculateBMI(loggedInUser);
+    memberStats.bmiCategory = this.bmiCategory(loggedInUser);
+    memberStats.idealBodyWeight = this.calculateIdealBodyWeight(loggedInUser);
+    memberStats.isIdealBodyWeight = this.checkIdealBodyWeight(loggedInUser);
+    memberStats.weightTrend = true;
+    if (assessments.length > 1 ){
+      memberStats.weightTrend = assessments[1].weight > assessments[0].weight;
+    }
+    return memberStats;
+  },
 
   getCurrentWeight(loggedInUser) {
     const assessments = assessmentStore.getUserAssessments(loggedInUser.id);
@@ -75,7 +98,6 @@ const analytics = {
   },
 
   checkIdealBodyWeight(loggedInUser) {
-    const assessments = assessmentStore.getUserAssessments(loggedInUser.id);
     let weightIndicator = false;
 
     if (Math.abs(this.getCurrentWeight(loggedInUser) - this.calculateIdealBodyWeight(loggedInUser)) <= tolerance) {
