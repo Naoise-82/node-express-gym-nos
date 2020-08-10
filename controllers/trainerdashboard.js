@@ -20,10 +20,13 @@ const trainerDashboard = {
     response.render("trainerdashboard", viewData);
   },
 
+  deleteMember(request, response) {
+    const memberId = request.params.id;
+    userStore.removeUser(memberId);
+    response.redirect("/trainerdashboard");
+  }
 
 
-
-
-}
+};
 
 module.exports = trainerDashboard;

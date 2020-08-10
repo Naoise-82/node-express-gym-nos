@@ -17,6 +17,12 @@ const userStore = {
     this.store.save();
   },
 
+  removeUser(id) {
+    const user = this.getUserById(id);
+    this.store.remove(this.collection, user);
+    this.store.save();
+  },
+
   updateUser() {
     this.store.save();
   },

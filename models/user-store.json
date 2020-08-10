@@ -1,16 +1,6 @@
 {
   "users": [
     {
-      "firstName": "Ned",
-      "lastName": "Flanders",
-      "gender": "Male",
-      "height": "160",
-      "startingWeight": "80",
-      "email": "ned@flanders.com",
-      "password": "ned",
-      "id": "1f5f28f0-d696-11ea-b890-190be6cf5416"
-    },
-    {
       "firstName": "HOMER",
       "lastName": "SIMPSON",
       "email": "homer@simpson.com",
