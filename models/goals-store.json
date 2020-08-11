@@ -1,0 +1,19 @@
+{
+  "goals": [
+    {
+      "id": "b00dc880-db63-11ea-b522-99cd92fed661",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "date": "2020-08-13",
+      "targetArea": "weight",
+      "targetMeasurement": "55.43"
+    },
+    {
+      "id": "5650351351",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "date": "2020-08-11",
+      "targetArea": "Weight",
+      "targetMeasurement": "70.00",
+      "status": "Open"
+    }
+  ]
+}

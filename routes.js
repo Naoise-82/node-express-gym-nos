@@ -24,12 +24,12 @@ router.get("/updatedetails", updatedetails.index);
 router.post("/updatemember/:id", updatedetails.updateMember);
 
 router.get("/memberdashboard", memberdashboard.index);
-router.get("/trainerdashboard", trainerdashboard.index);
-router.get("/trainerdashboard/deletemember/:id", trainerdashboard.deleteMember);
-
 router.post("/memberdashboard/addassessment", memberdashboard.addAssessment);
 router.get("/memberdashboard/removeassessment/:id", memberdashboard.removeAssessment);
+router.post("/memberdashboard/addgoal", memberdashboard.addGoal);
 
+router.get("/trainerdashboard", trainerdashboard.index);
+router.get("/trainerdashboard/deletemember/:id", trainerdashboard.deleteMember);
 router.get("/trainercommentpage/:id", trainercommentpage.index);
 router.post("/trainercommentpage/addcomment/:id", trainercommentpage.addComment);
 

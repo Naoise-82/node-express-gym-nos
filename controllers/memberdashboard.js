@@ -5,6 +5,7 @@ const uuid = require("uuid");
 const accounts = require("./accounts.js");
 const assessmentStore = require("../models/assessment-store");
 const analytics = require("../utils/analytics");
+const goalStore = require("../models/goals-store");
 
 const memberDashboard = {
   index(request, response) {
@@ -16,6 +17,7 @@ const memberDashboard = {
       loggedInUser: loggedInUser,
       stats: stats,
       assessments: assessmentStore.getUserAssessments(loggedInUser.id),
+      goals: goalStore.getUserGoals(loggedInUser.id)
     };
     response.render("memberdashboard", viewData);
   },
@@ -53,6 +55,20 @@ const memberDashboard = {
     const assessmentId = request.params.id;
     logger.info(`Removing Assessment ${assessmentId}`);
     assessmentStore.removeAssessment(assessmentId);
+    response.redirect("/memberdashboard");
+  },
+
+  addGoal(request, response) {
+    const loggedInUser = accounts.getCurrentUser(request);
+
+    const goal = {
+      id: uuid.v1(),
+      userid: loggedInUser.id,
+      date: request.body.date,
+      targetArea: request.body.targetArea,
+      targetMeasurement: request.body.targetMeasurement,
+    };
+    goalStore.addGoal(goal);
     response.redirect("/memberdashboard");
   }
 
