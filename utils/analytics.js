@@ -1,9 +1,7 @@
 "use strict";
 
 const logger = require("../utils/logger.js");
-const accounts = require("../controllers/accounts.js");
 const assessmentStore = require("../models/assessment-store");
-const userStore = require("../models/user-store");
 const memberStats = require("../utils/memberstats");
 const tolerance = 0.2;
 
@@ -11,7 +9,7 @@ const analytics = {
 
   getAssessmentCount(memberId) {
     const assessments = assessmentStore.getUserAssessments(memberId);
-    const assessmentCount = assessments.length
+    const assessmentCount = assessments.length;
 
     return assessmentCount;
   },

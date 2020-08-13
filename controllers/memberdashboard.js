@@ -24,6 +24,14 @@ const memberDashboard = {
 
   addAssessment(request, response) {
     const loggedInUser = accounts.getCurrentUser(request);
+    const assessments = assessmentStore.getUserAssessments(loggedInUser.id)
+    const newWeight = request.body.weight;
+
+    // determine whether the member's weight is trending upwards or downwards
+    let weightTrend = false;
+    if(assessments.length > 1) {
+      weightTrend = (newWeight < assessments[0].weight);
+    } else weightTrend = newWeight < loggedInUser.startingWeight;
 
     // create a date object called "timestamp" with the current date and time
     const timestamp = new Date();
@@ -45,11 +53,13 @@ const memberDashboard = {
       thigh: request.body.thigh,
       upperarm: request.body.upperarm,
       waist: request.body.waist,
-      hips: request.body.hips
+      hips: request.body.hips,
+      weightTrend: weightTrend
     };
     assessmentStore.addAssessment(assessment);
     response.redirect("/memberdashboard");
   },
+
 
   removeAssessment(request, response) {
     const assessmentId = request.params.id;

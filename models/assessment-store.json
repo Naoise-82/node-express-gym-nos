@@ -1,15 +1,16 @@
 {
   "assessmentCollection": [
     {
-      "id": "3db823a0-d82c-11ea-92be-5b20ff83c776",
+      "id": "6ce206c0-ddb6-11ea-9432-49c5428734f2",
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "date": "20/08/06 22:31:51",
-      "weight": "75.2",
+      "date": "20/08/13 23:43:36",
+      "weight": "85",
       "chest": "",
       "thigh": "",
       "upperarm": "",
       "waist": "",
-      "hips": ""
+      "hips": "",
+      "weightTrend": false
     },
     {
       "id": "3",

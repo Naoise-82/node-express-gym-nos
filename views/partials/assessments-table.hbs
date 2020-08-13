@@ -27,7 +27,8 @@
             <td class="ui item"> {{upperarm}}</td>
             <td class="ui item"> {{waist}}</td>
             <td class="ui item"> {{hips}}</td>
-            <td class="ui item"> </td>
+            <td class="ui item"> {{#if weightTrend}}<i class="large green arrow circle down icon"></i>
+                                 {{else}}<i class="large red arrow circle up icon"></i>{{/if}}</td>
             <td class="ui item"> {{comment}}</td>
             <td><a href="/memberdashboard/removeassessment/{{id}}"><button class="ui tiny red button">Delete</button></a></td>
           </tr>
