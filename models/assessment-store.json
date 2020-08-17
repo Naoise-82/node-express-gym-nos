@@ -1,10 +1,10 @@
 {
   "assessmentCollection": [
     {
-      "id": "6ce206c0-ddb6-11ea-9432-49c5428734f2",
+      "id": "10ccebb0-e0e1-11ea-90af-9bf7a3a942be",
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "date": "20/08/13 23:43:36",
-      "weight": "85",
+      "date": "20/08/18 00:26:24",
+      "weight": 90,
       "chest": "",
       "thigh": "",
       "upperarm": "",
@@ -13,16 +13,28 @@
       "weightTrend": false
     },
     {
-      "id": "3",
+      "id": "0efd34c0-e0e1-11ea-90af-9bf7a3a942be",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "date": "20/08/18 00:26:21",
+      "weight": 85,
+      "chest": "",
+      "thigh": "",
+      "upperarm": "",
+      "waist": "",
+      "hips": "",
+      "weightTrend": false
+    },
+    {
+      "id": "0525fae0-e0e1-11ea-90af-9bf7a3a942be",
       "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
-      "date": "27/07/2020",
+      "date": "20/08/18 00:26:04",
       "weight": 60,
-      "chest": 41,
-      "thigh": 20,
-      "upperarm": 15,
-      "waist": 32,
-      "hips": 34,
-      "comment": "Hello"
+      "chest": "",
+      "thigh": "",
+      "upperarm": "",
+      "waist": "",
+      "hips": "",
+      "weightTrend": false
     }
   ]
 }

@@ -12,10 +12,19 @@ const trainerDashboard = {
     logger.info("rendering trainer dashboard");
     const loggedInTrainer = accounts.getCurrentTrainer(request);
     const members = userStore.getAllUsers();
+    //let assessmentCounts = [];
+
+    for (let i = 0; i < members.length; i++) {
+      const userid = members[i].id;
+      const assessments = assessmentStore.getUserAssessments(userid);
+      members[i].assessmentCount = assessments.length;
+      //userStore.updateUser();
+    }
     const viewData = {
       title: "Trainer Dashboard",
       trainer: loggedInTrainer,
-      members: members
+      members: members,
+      //assessmentCounts: assessmentCounts,
     };
     response.render("trainerdashboard", viewData);
   },
@@ -24,9 +33,7 @@ const trainerDashboard = {
     const memberId = request.params.id;
     userStore.removeUser(memberId);
     response.redirect("/trainerdashboard");
-  }
-
-
+  },
 };
 
 module.exports = trainerDashboard;

@@ -28,8 +28,8 @@ const memberDashboard = {
     const newWeight = request.body.weight;
 
     // determine whether the member's weight is trending upwards or downwards
-    let weightTrend = false;
-    if(assessments.length > 1) {
+    let weightTrend = true;
+    if(assessments.length > 0) {
       weightTrend = (newWeight < assessments[0].weight);
     } else weightTrend = newWeight < loggedInUser.startingWeight;
 
@@ -48,7 +48,7 @@ const memberDashboard = {
       id: uuid.v1(),
       userid: loggedInUser.id,
       date: date,
-      weight: request.body.weight,
+      weight: parseFloat(request.body.weight),
       chest: request.body.chest,
       thigh: request.body.thigh,
       upperarm: request.body.upperarm,
