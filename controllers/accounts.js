@@ -42,6 +42,8 @@ const accounts = {
 
   register(request, response) {
     const user = request.body;
+    user.startingWeight = Number(user.startingWeight);
+    user.height = Number(user.height);
     user.id = uuid.v1();
     userStore.addUser(user);
     logger.info(`registering ${user.email}`);

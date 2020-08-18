@@ -48,12 +48,12 @@ const memberDashboard = {
       id: uuid.v1(),
       userid: loggedInUser.id,
       date: date,
-      weight: parseFloat(request.body.weight),
-      chest: request.body.chest,
-      thigh: request.body.thigh,
-      upperarm: request.body.upperarm,
-      waist: request.body.waist,
-      hips: request.body.hips,
+      weight: Number(request.body.weight),
+      chest: Number(request.body.chest),
+      thigh: Number(request.body.thigh),
+      upperarm: Number(request.body.upperarm),
+      waist: Number(request.body.waist),
+      hips: Number(request.body.hips),
       weightTrend: weightTrend
     };
     assessmentStore.addAssessment(assessment);
@@ -76,7 +76,7 @@ const memberDashboard = {
       userid: loggedInUser.id,
       date: request.body.date,
       targetArea: request.body.targetArea,
-      targetMeasurement: request.body.targetMeasurement,
+      targetMeasurement: Number(request.body.targetMeasurement),
     };
     goalStore.addGoal(goal);
     response.redirect("/memberdashboard");
