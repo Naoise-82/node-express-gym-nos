@@ -75,11 +75,25 @@ const memberDashboard = {
       id: uuid.v1(),
       userid: loggedInUser.id,
       date: request.body.date,
-      targetArea: request.body.targetArea,
-      targetMeasurement: Number(request.body.targetMeasurement),
+      targetArea1: request.body.targetArea1,
+      targetMeasurement1: request.body.targetMeasurement1,
+      targetArea2: request.body.targetArea2,
+      targetMeasurement2: request.body.targetMeasurement2
     };
     goalStore.addGoal(goal);
     response.redirect("/memberdashboard");
+  },
+
+  checkGoalStatus(goal) {
+    let status = "";
+
+    // create a date object called "timestamp" with the current date and time
+    const timestamp = new Date();
+
+    //take the relevant date from the timestamp and compile short string to match the date format in the goals-store
+    const currentDate = timestamp.getFullYear() + "/"
+      + ("0" + (timestamp.getMonth()+1)).slice(-2) + "/" // add a leading 0 & shorten to two characters (if needed)
+      + ("0" + timestamp.getDate()).slice(-2) + " ";
   }
 
 };

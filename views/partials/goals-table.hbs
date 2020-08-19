@@ -1,0 +1,29 @@
+<section class="ui segment">
+    <header class="ui header">
+        <i class="yellow trophy icon"></i></i> Goal History
+    </header>
+    <table class="ui fixed table">
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>Target Area 1</th>
+            <th>Target Measurement 1</th>
+            <th>Target Area 2</th>
+            <th>Target Measurement 2</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each goals}}
+            <tr>
+                <td class="ui item"> {{date}} </td>
+                <td class="ui item"> {{targetArea1}} </td>
+                <td class="ui item"> {{targetMeasurement1}} </td>
+                <td class="ui item"> {{targetArea2}} </td>
+                <td class="ui item"> {{targetMeasurement2}} </td>
+                <td class="ui item"> {{status}} </td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</section>

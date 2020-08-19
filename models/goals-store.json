@@ -1,18 +1,13 @@
 {
   "goals": [
     {
-      "id": "2e056080-e0dd-11ea-a1ee-8b100975845d",
+      "id": "93231dd0-e273-11ea-ae3f-affb72c5459f",
       "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
-      "date": "2020-08-20",
-      "targetArea": "Weight",
-      "targetMeasurement": "100"
-    },
-    {
-      "id": "226d3cc0-e0dd-11ea-a1ee-8b100975845d",
-      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
-      "date": "",
-      "targetArea": "Weight",
-      "targetMeasurement": "90"
+      "date": "2020/8/20",
+      "targetArea1": "Weight",
+      "targetMeasurement1": "50",
+      "targetArea2": "Waist",
+      "targetMeasurement2": "30"
     },
     {
       "id": "b00dc880-db63-11ea-b522-99cd92fed661",

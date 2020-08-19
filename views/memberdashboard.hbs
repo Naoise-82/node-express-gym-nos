@@ -2,9 +2,11 @@
 
 <section class="ui segment">
     {{> memberstats}}
-    {{> add-goal}}
-    {{> goals }}
-    {{> add-assessment-form}}
+    <div class="ui horizontal segments">
+        {{> add-goal }}
+        {{> add-assessment-form}}
+    </div>
+    {{> goals-table}}
     {{> assessments-table}}
 
 </section>
