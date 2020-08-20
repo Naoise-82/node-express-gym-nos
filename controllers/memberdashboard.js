@@ -29,7 +29,7 @@ const memberDashboard = {
 
     // determine whether the member's weight is trending upwards or downwards
     let weightTrend = true;
-    if(assessments.length > 0) {
+    if (assessments.length > 0) {
       weightTrend = (newWeight < assessments[0].weight);
     } else weightTrend = newWeight < loggedInUser.startingWeight;
 
@@ -37,12 +37,12 @@ const memberDashboard = {
     const timestamp = new Date();
 
     //take the relevant date and time data from the timestamp and compile short string
-    const date = timestamp.getFullYear()-2000 + "/"
-    + ("0" + (timestamp.getMonth()+1)).slice(-2) + "/" // add a leading 0 & shorten to two characters (if needed)
-    + ("0" + timestamp.getDate()).slice(-2) + " "
-    + ("0" + timestamp.getHours()).slice(-2) + ":"
-    + ("0" + timestamp.getMinutes()).slice(-2) + ":"
-    + ("0" + timestamp.getSeconds()).slice(-2)
+    const date = timestamp.getFullYear() - 2000 + "/"
+      + ("0" + (timestamp.getMonth() + 1)).slice(-2) + "/" // add a leading 0 & shorten to two characters (if needed)
+      + ("0" + timestamp.getDate()).slice(-2) + " "
+      + ("0" + timestamp.getHours()).slice(-2) + ":"
+      + ("0" + timestamp.getMinutes()).slice(-2) + ":"
+      + ("0" + timestamp.getSeconds()).slice(-2)
 
     const assessment = {
       id: uuid.v1(),
@@ -82,18 +82,6 @@ const memberDashboard = {
     };
     goalStore.addGoal(goal);
     response.redirect("/memberdashboard");
-  },
-
-  checkGoalStatus(goal) {
-    let status = "";
-
-    // create a date object called "timestamp" with the current date and time
-    const timestamp = new Date();
-
-    //take the relevant date from the timestamp and compile short string to match the date format in the goals-store
-    const currentDate = timestamp.getFullYear() + "/"
-      + ("0" + (timestamp.getMonth()+1)).slice(-2) + "/" // add a leading 0 & shorten to two characters (if needed)
-      + ("0" + timestamp.getDate()).slice(-2) + " ";
   }
 
 };

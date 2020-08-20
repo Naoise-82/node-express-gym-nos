@@ -51,9 +51,9 @@
                 formatter: {
                     date: function (date, settings) {
                         if (!date) return '';
-                        var day = date.getDate();
-                        var month = date.getMonth() + 1;
-                        var year = date.getFullYear();
+                        const day = date.getDate();
+                        const month = date.getMonth()+1;
+                        const year = date.getFullYear()-2000;
                         return year + '/' + month + '/' + day;
                     }
                 }

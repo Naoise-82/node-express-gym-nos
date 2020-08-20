@@ -1,28 +1,49 @@
 {
   "goals": [
     {
-      "id": "93231dd0-e273-11ea-ae3f-affb72c5459f",
+      "id": "1eabfec0-e33d-11ea-aa1b-35eee331153d",
       "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
-      "date": "2020/8/20",
+      "date": "20/8/21",
       "targetArea1": "Weight",
       "targetMeasurement1": "50",
-      "targetArea2": "Waist",
-      "targetMeasurement2": "30"
+      "targetArea2": "Weight",
+      "targetMeasurement2": ""
     },
     {
-      "id": "b00dc880-db63-11ea-b522-99cd92fed661",
-      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "date": "2020-08-13",
-      "targetArea": "weight",
-      "targetMeasurement": "55.43"
+      "id": "6dcc1100-e33a-11ea-81b8-8bf70265daec",
+      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "date": "20/8/29",
+      "targetArea1": "Weight",
+      "targetMeasurement1": "",
+      "targetArea2": "Weight",
+      "targetMeasurement2": ""
     },
     {
-      "id": "5650351351",
-      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "date": "2020-08-11",
-      "targetArea": "Weight",
-      "targetMeasurement": "70.00",
-      "status": "Open"
+      "id": "4c95de80-e33a-11ea-8511-5722703926cb",
+      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "date": "20/8/21",
+      "targetArea1": "Weight",
+      "targetMeasurement1": "",
+      "targetArea2": "Weight",
+      "targetMeasurement2": ""
+    },
+    {
+      "id": "1d303b90-e33a-11ea-aa4d-458469980656",
+      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "date": "20/7/17",
+      "targetArea1": "Weight",
+      "targetMeasurement1": "",
+      "targetArea2": "Weight",
+      "targetMeasurement2": ""
+    },
+    {
+      "id": "e5d453c0-e339-11ea-9883-f990a63b09a2",
+      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "date": "20/7/22",
+      "targetArea1": "Weight",
+      "targetMeasurement1": "",
+      "targetArea2": "Weight",
+      "targetMeasurement2": ""
     }
   ]
 }
