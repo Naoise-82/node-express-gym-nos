@@ -75,12 +75,15 @@ const memberDashboard = {
       id: uuid.v1(),
       userid: loggedInUser.id,
       date: request.body.date,
-      targetArea1: request.body.targetArea1,
-      targetMeasurement1: request.body.targetMeasurement1,
-      targetArea2: request.body.targetArea2,
-      targetMeasurement2: request.body.targetMeasurement2
+      targetWeight: Number(request.body.goalWeight),
+      additionalTarget: request.body.additionalTarget,
+      additionalTargetValue: Number(request.body.additionalTargetValue),
+      status: "Open"
     };
-    goalStore.addGoal(goal);
+    if ((goal.additionalTarget === "" && goal.additionalTargetValue !== 0) ||
+        (goal.additionalTarget !== "" && goal.additionalTargetValue === 0)) {
+      response.redirect("/memberdashboard")
+    } else goalStore.addGoal(goal);
     response.redirect("/memberdashboard");
   }
 

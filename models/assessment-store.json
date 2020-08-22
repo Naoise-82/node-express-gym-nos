@@ -13,18 +13,6 @@
       "weightTrend": false
     },
     {
-      "id": "8982a1d0-e267-11ea-9b81-b52ce423f343",
-      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
-      "date": "20/08/19 23:01:30",
-      "weight": 43.7,
-      "chest": 0,
-      "thigh": 0,
-      "upperarm": 0,
-      "waist": 0,
-      "hips": 0,
-      "weightTrend": true
-    },
-    {
       "id": "10ccebb0-e0e1-11ea-90af-9bf7a3a942be",
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "date": "20/08/18 00:26:24",
@@ -41,18 +29,6 @@
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "date": "20/08/18 00:26:21",
       "weight": 85,
-      "chest": "",
-      "thigh": "",
-      "upperarm": "",
-      "waist": "",
-      "hips": "",
-      "weightTrend": false
-    },
-    {
-      "id": "0525fae0-e0e1-11ea-90af-9bf7a3a942be",
-      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
-      "date": "20/08/18 00:26:04",
-      "weight": 60,
       "chest": "",
       "thigh": "",
       "upperarm": "",

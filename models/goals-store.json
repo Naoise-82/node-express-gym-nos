@@ -4,46 +4,18 @@
       "id": "1eabfec0-e33d-11ea-aa1b-35eee331153d",
       "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
       "date": "20/8/21",
-      "targetArea1": "Weight",
-      "targetMeasurement1": "50",
-      "targetArea2": "Weight",
-      "targetMeasurement2": ""
+      "targetWeight": 50,
+      "additionalTarget": "Waist",
+      "additionalTargetValue": 55,
+      "status": "Achieved"
     },
     {
       "id": "6dcc1100-e33a-11ea-81b8-8bf70265daec",
       "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
       "date": "20/8/29",
-      "targetArea1": "Weight",
-      "targetMeasurement1": "",
-      "targetArea2": "Weight",
-      "targetMeasurement2": ""
-    },
-    {
-      "id": "4c95de80-e33a-11ea-8511-5722703926cb",
-      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
-      "date": "20/8/21",
-      "targetArea1": "Weight",
-      "targetMeasurement1": "",
-      "targetArea2": "Weight",
-      "targetMeasurement2": ""
-    },
-    {
-      "id": "1d303b90-e33a-11ea-aa4d-458469980656",
-      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
-      "date": "20/7/17",
-      "targetArea1": "Weight",
-      "targetMeasurement1": "",
-      "targetArea2": "Weight",
-      "targetMeasurement2": ""
-    },
-    {
-      "id": "e5d453c0-e339-11ea-9883-f990a63b09a2",
-      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
-      "date": "20/7/22",
-      "targetArea1": "Weight",
-      "targetMeasurement1": "",
-      "targetArea2": "Weight",
-      "targetMeasurement2": ""
+      "targetWeight": 60,
+      "additionalTarget": "Waist",
+      "additionalTargetValue": 54.60
     }
   ]
 }

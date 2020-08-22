@@ -21,13 +21,11 @@ app.engine(
     extname: ".hbs",
     defaultLayout: "main",
     helpers: {
+
       // assess the status of a goal to determine whether it is still open, achieved or missed
       checkGoalStatus(goal, request) {
-        //const member = accounts.getCurrentUser(request);
         const assessments = assessmentStore.getUserAssessments(goal.userid);
-        let status = "";
-
-        const targetArea1 = goal.targetArea1.toLowerCase();
+        let displayStatus = "";
 
         // create a date object called "timestamp" with the current date and time
         const timestamp = new Date();
@@ -37,12 +35,38 @@ app.engine(
           + (timestamp.getMonth()+1) + "/" // add a leading 0 & shorten to two characters (if needed)
           + ("0" + timestamp.getDate()).slice(-2);
 
-        logger.info("Current Date: " + currentDate);
+        // determine the additional target value to be compared to from the assessment
+        let additionalTarget = goal.additionalTarget;
+        let assessmentValue = 0;
 
-        if(currentDate <= goal.date && assessments[0].weight <= goal.targetMeasurement1) {
-          status = "Achieved";
-        } else status = "Missed";
-        return status;
+        if (additionalTarget === "Chest") {
+          assessmentValue = assessments[0].chest;
+        } else if (additionalTarget === "Thigh") {
+          assessmentValue = assessments[0].thigh;
+        } else if (additionalTarget === "Upper Arm") {
+          assessmentValue = assessments[0].upperarm;
+        } else if (additionalTarget === "Waist") {
+          assessmentValue = assessments[0].waist;
+        } else if (additionalTarget === "Hips") {
+          assessmentValue = assessments[0].hips;
+        }
+
+        // determine the status of the goal by comparing the goal values to the latest assessment values
+        if (goal.status === "Achieved") {
+          displayStatus = "Achieved"
+
+        } else if (currentDate <= goal.date && assessments[0].weight <= goal.targetWeight &&
+                  (additionalTarget === "" || goal.additionalTargetValue <= assessmentValue)) {
+          goal.status = "Achieved";
+          displayStatus = "Achieved";
+
+        } else if (currentDate <= goal.date && assessments[0].weight > goal.targetWeight &&
+                  (additionalTarget === "" || goal.additionalTargetValue > assessmentValue)) {
+          displayStatus = "Open";
+
+        } else displayStatus = "Missed";
+        goal.status = "Missed";
+        return displayStatus;
       }
     }
   })

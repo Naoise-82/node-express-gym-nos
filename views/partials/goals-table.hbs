@@ -6,10 +6,9 @@
         <thead>
         <tr>
             <th>Date</th>
-            <th>Target Area 1</th>
-            <th>Target Measurement 1</th>
-            <th>Target Area 2</th>
-            <th>Target Measurement 2</th>
+            <th>Target Weight (kg)</th>
+            <th>Additional Target</th>
+            <th>Target Measurement (cm)</th>
             <th>Status</th>
         </tr>
         </thead>
@@ -17,10 +16,9 @@
         {{#each goals}}
             <tr>
                 <td class="ui item"> {{date}} </td>
-                <td class="ui item"> {{targetArea1}} </td>
-                <td class="ui item"> {{targetMeasurement1}} </td>
-                <td class="ui item"> {{targetArea2}} </td>
-                <td class="ui item"> {{targetMeasurement2}} </td>
+                <td class="ui item"> {{targetWeight}} </td>
+                <td class="ui item"> {{additionalTarget}} </td>
+                <td class="ui item"> {{additionalTargetMeasurement}} </td>
                 <td class="ui item"> {{checkGoalStatus this}} </td>
             </tr>
         {{/each}}
