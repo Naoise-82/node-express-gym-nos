@@ -1,12 +1,12 @@
 {{> membermenu id="memberdashboard"}}
 
-<section class="ui segment">
+<section class="ui segment" style="background: #d5d6eb">
     {{> memberstats}}
+    {{> goalstats}}
     <div class="ui horizontal segments">
         {{> add-goal }}
         {{> add-assessment-form}}
     </div>
-    {{> goals-table}}
     {{> assessments-table}}
-
+    {{> goals-table}}
 </section>

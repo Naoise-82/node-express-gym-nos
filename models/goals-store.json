@@ -1,21 +1,40 @@
 {
   "goals": [
     {
-      "id": "1eabfec0-e33d-11ea-aa1b-35eee331153d",
-      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
-      "date": "20/8/21",
-      "targetWeight": 50,
-      "additionalTarget": "Waist",
-      "additionalTargetValue": 55,
+      "id": "8aa3f360-e664-11ea-a41c-494d5343009c",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "date": "20/8/31",
+      "targetWeight": 75,
+      "additionalTarget": "",
+      "additionalTargetValue": 0,
+      "status": "Open"
+    },
+    {
+      "id": "2e96ffa0-e663-11ea-887d-0369982f5bab",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "date": "20/8/26",
+      "targetWeight": 80,
+      "additionalTarget": "",
+      "additionalTargetValue": 0,
+      "status": "Open"
+    },
+    {
+      "id": "f38a8860-e661-11ea-9fe6-171302cadf96",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "date": "20/8/26",
+      "targetWeight": 85,
+      "additionalTarget": "",
+      "additionalTargetValue": 0,
       "status": "Achieved"
     },
     {
-      "id": "6dcc1100-e33a-11ea-81b8-8bf70265daec",
+      "id": "74c09b10-e660-11ea-a8c9-8f88e656c018",
       "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
-      "date": "20/8/29",
-      "targetWeight": 60,
-      "additionalTarget": "Waist",
-      "additionalTargetValue": 54.60
+      "date": "20/8/15",
+      "targetWeight": 50,
+      "additionalTarget": "",
+      "additionalTargetValue": 0,
+      "status": "Open"
     }
   ]
 }

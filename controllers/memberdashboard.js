@@ -10,14 +10,18 @@ const goalStore = require("../models/goals-store");
 const memberDashboard = {
   index(request, response) {
     logger.info("rendering member dashboard");
+
     const loggedInUser = accounts.getCurrentUser(request);
     const stats = analytics.generateMemberStats(loggedInUser);
+    const goalStats = analytics.generateGoalStats(loggedInUser);
+
     const viewData = {
       title: "Member Dashboard",
       loggedInUser: loggedInUser,
       stats: stats,
       assessments: assessmentStore.getUserAssessments(loggedInUser.id),
-      goals: goalStore.getUserGoals(loggedInUser.id)
+      goals: goalStore.getUserGoals(loggedInUser.id),
+      goalStats: goalStats
     };
     response.render("memberdashboard", viewData);
   },
@@ -71,20 +75,24 @@ const memberDashboard = {
   addGoal(request, response) {
     const loggedInUser = accounts.getCurrentUser(request);
 
-    const goal = {
-      id: uuid.v1(),
-      userid: loggedInUser.id,
-      date: request.body.date,
-      targetWeight: Number(request.body.goalWeight),
-      additionalTarget: request.body.additionalTarget,
-      additionalTargetValue: Number(request.body.additionalTargetValue),
-      status: "Open"
-    };
-    if ((goal.additionalTarget === "" && goal.additionalTargetValue !== 0) ||
-        (goal.additionalTarget !== "" && goal.additionalTargetValue === 0)) {
-      response.redirect("/memberdashboard")
-    } else goalStore.addGoal(goal);
-    response.redirect("/memberdashboard");
+    // validate the data to make sure that the required fields are filled
+    if (request.body.date === "" || request.body.goalWeight <= 0 ||
+      (request.body.additionalTarget === "" && request.body.additionalTargetValue !== "") ||
+      (request.body.additionalTarget !== "" && request.body.additionalTargetValue === "")) {
+      response.redirect("/memberdashboard");
+    } else {
+      const goal = {
+        id: uuid.v1(),
+        userid: loggedInUser.id,
+        date: request.body.date,
+        targetWeight: Number(request.body.goalWeight),
+        additionalTarget: request.body.additionalTarget,
+        additionalTargetValue: Number(request.body.additionalTargetValue),
+        status: "Open"
+      };
+      goalStore.addGoal(goal);
+      response.redirect("/memberdashboard");
+    }
   }
 
 };

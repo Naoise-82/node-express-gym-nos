@@ -2,16 +2,33 @@
 
 const logger = require("../utils/logger.js");
 const assessmentStore = require("../models/assessment-store");
+const goalsStore = require("../models/goals-store");
+const goalStats = require("../utils/goalstats");
 const memberStats = require("../utils/memberstats");
 const tolerance = 0.2;
 
 const analytics = {
 
-  getAssessmentCount(memberId) {
-    const assessments = assessmentStore.getUserAssessments(memberId);
-    const assessmentCount = assessments.length;
+  generateGoalStats(loggedInUser) {
+    const goals = goalsStore.getUserGoals(loggedInUser.id);
 
-    return assessmentCount;
+    //reset values in goalStats.js
+    goalStats.openGoals = 0;
+    goalStats.achievedGoals = 0;
+    goalStats.missedGoals = 0;
+
+    for (let i = 0; i < goals.length; i++) {
+      if (goals[i].status === "Open") {
+        goalStats.openGoals += 1;
+      }
+      if (goals[i].status === "Achieved") {
+        goalStats.achievedGoals =+ 1;
+      }
+      if (goals[i].status === "Missed") {
+        goalStats.missedGoals += 1;
+      }
+    }
+    return goalStats;
   },
 
   generateMemberStats(loggedInUser) {
@@ -22,10 +39,10 @@ const analytics = {
     memberStats.bmiCategory = this.bmiCategory(loggedInUser);
     memberStats.idealBodyWeight = this.calculateIdealBodyWeight(loggedInUser);
     memberStats.isIdealBodyWeight = this.checkIdealBodyWeight(loggedInUser);
-    memberStats.weightTrend = true;
+    /*memberStats.weightTrend = true;
     if (assessments.length > 1 ){
       memberStats.weightTrend = assessments[1].weight > assessments[0].weight;
-    }
+    }*/
     return memberStats;
   },
 

@@ -1,22 +1,19 @@
-<section class="ui segment">
-
-    <div class="ui horizontal segments">
-        <div class="ui segment">
-            <div style="text-align: center;"><i class="massive blue ui user icon"></i></div>
-            <h3 class="ui centered header">Member:<br>{{loggedInUser.firstName}} {{loggedInUser.lastName}}</h3>
-        </div>
-        <div class="ui segment">
-            <div style="text-align: center;"><i class="massive ui heartbeat icon"></i></div>
-            <h3 class="ui centered header">Current BMI:<br> {{stats.bmi}} </h3>
-        </div>
-        <div class="ui segment">
-            <div style="text-align: center;"><i class="ui massive user md icon"></i></div>
-            <h3 class="ui centered header">Current BMI Category:<br> {{stats.bmiCategory}} </h3>
-        </div>
-        <div class="ui segment">
-            <div style="text-align: center;"> {{#if stats.isIdealBodyWeight}} <i class="massive green weight icon"></i>
-            {{else}} <i class=" massive red weight icon"></i> {{/if}}</div>
-            <h3 class="ui centered header">Ideal Body Weight: {{stats.idealBodyWeight}} kg <br>Current Weight: {{stats.weight}} kg</h3>
-        </div>
+<section class="ui horizontal segments">
+    <div class="ui segment">
+        <div style="text-align: center;"><i class="massive blue ui user icon"></i></div>
+        <h3 class="ui centered header">Member:<br>{{loggedInUser.firstName}} {{loggedInUser.lastName}}</h3>
+    </div>
+    <div class="ui segment">
+        <div style="text-align: center;"><i class="massive ui heartbeat icon"></i></div>
+        <h3 class="ui centered header">Current BMI:<br> {{stats.bmi}} </h3>
+    </div>
+    <div class="ui segment">
+        <div style="text-align: center;"><i class="ui massive user md icon"></i></div>
+        <h3 class="ui centered header">Current BMI Category:<br> {{stats.bmiCategory}} </h3>
+    </div>
+    <div class="ui segment">
+        <div style="text-align: center;"> {{#if stats.isIdealBodyWeight}} <i class="massive green weight icon"></i>
+        {{else}} <i class=" massive red weight icon"></i> {{/if}}</div>
+        <h3 class="ui centered header">Ideal Body Weight: {{stats.idealBodyWeight}}kg <br><em>(Current Weight: {{stats.weight}}kg)</em></h3>
     </div>
 </section>

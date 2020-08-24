@@ -21,6 +21,10 @@ const goalsStore = {
     this.store.add(this.collection, goal);
     this.store.save();
   },
+
+  updateGoal(goal) {
+    this.store.save();
+  }
 }
 
 module.exports = goalsStore;

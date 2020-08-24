@@ -7,7 +7,7 @@ const cookieParser = require("cookie-parser");
 const fileUpload = require("express-fileupload");
 
 const assessmentStore = require("./models/assessment-store");
-const accounts = require("./controllers/accounts");
+const goalsStore = require("./models/goals-store");
 
 const app = express();
 app.use(cookieParser());
@@ -58,14 +58,21 @@ app.engine(
         } else if (currentDate <= goal.date && assessments[0].weight <= goal.targetWeight &&
                   (additionalTarget === "" || goal.additionalTargetValue <= assessmentValue)) {
           goal.status = "Achieved";
+          goalsStore.updateGoal(goal);
           displayStatus = "Achieved";
 
         } else if (currentDate <= goal.date && assessments[0].weight > goal.targetWeight &&
                   (additionalTarget === "" || goal.additionalTargetValue > assessmentValue)) {
+          goal.status = "Open";
+          goalsStore.updateGoal(goal);
           displayStatus = "Open";
 
-        } else displayStatus = "Missed";
-        goal.status = "Missed";
+        } else if (currentDate > goal.date && assessments[0].weight > goal.targetWeight &&
+                  (additionalTarget === "" || goal.additionalTargetValue > assessmentValue)) {
+          displayStatus = "Missed";
+          goal.status = "Missed";
+          goalsStore.updateGoal(goal);
+        }
         return displayStatus;
       }
     }
@@ -77,5 +84,5 @@ const routes = require("./routes");
 app.use("/", routes);
 
 const listener = app.listen(process.env.PORT || 4000, function() {
-  logger.info(`glitch-template-1 started on port ${listener.address().port}`);
+  logger.info(`play-gym-web-javascript started on port ${listener.address().port}`);
 });
