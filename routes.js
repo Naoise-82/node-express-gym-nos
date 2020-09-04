@@ -8,6 +8,7 @@ const trainerdashboard = require("./controllers/trainerdashboard.js");
 const trainercommentpage = require("./controllers/trainercommentpage");
 const updatedetails = require("./controllers/updatedetails");
 const accounts = require("./controllers/accounts.js");
+const about = require("./controllers/about");
 
 const analytics = require("./utils/analytics");
 
@@ -16,6 +17,7 @@ router.get("/login", accounts.login);
 router.get("/trainer-login", accounts.trainerLogin);
 router.get("/signup", accounts.signup);
 router.get("/logout", accounts.logout);
+router.get("/about", about.index);
 router.post("/register", accounts.register);
 router.post("/authenticate", accounts.authenticate);
 router.post("/trainerauthenticate", accounts.trainerAuthenticate);

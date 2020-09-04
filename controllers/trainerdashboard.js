@@ -18,13 +18,12 @@ const trainerDashboard = {
       const userid = members[i].id;
       const assessments = assessmentStore.getUserAssessments(userid);
       members[i].assessmentCount = assessments.length;
-      //userStore.updateUser();
+
     }
     const viewData = {
       title: "Trainer Dashboard",
       trainer: loggedInTrainer,
       members: members,
-      //assessmentCounts: assessmentCounts,
     };
     response.render("trainerdashboard", viewData);
   },

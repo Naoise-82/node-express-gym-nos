@@ -39,10 +39,6 @@ const analytics = {
     memberStats.bmiCategory = this.bmiCategory(loggedInUser);
     memberStats.idealBodyWeight = this.calculateIdealBodyWeight(loggedInUser);
     memberStats.isIdealBodyWeight = this.checkIdealBodyWeight(loggedInUser);
-    /*memberStats.weightTrend = true;
-    if (assessments.length > 1 ){
-      memberStats.weightTrend = assessments[1].weight > assessments[0].weight;
-    }*/
     return memberStats;
   },
 

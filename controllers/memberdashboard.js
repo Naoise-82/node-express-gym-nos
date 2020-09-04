@@ -13,6 +13,7 @@ const memberDashboard = {
 
     const loggedInUser = accounts.getCurrentUser(request);
     const stats = analytics.generateMemberStats(loggedInUser);
+    const goals = goalStore.getUserGoals(loggedInUser.id);
     const goalStats = analytics.generateGoalStats(loggedInUser);
 
     const viewData = {
@@ -20,7 +21,7 @@ const memberDashboard = {
       loggedInUser: loggedInUser,
       stats: stats,
       assessments: assessmentStore.getUserAssessments(loggedInUser.id),
-      goals: goalStore.getUserGoals(loggedInUser.id),
+      goals: goals,
       goalStats: goalStats
     };
     response.render("memberdashboard", viewData);

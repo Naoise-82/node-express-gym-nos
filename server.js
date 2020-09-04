@@ -25,7 +25,7 @@ app.engine(
       // assess the status of a goal to determine whether it is still open, achieved or missed
       checkGoalStatus(goal, request) {
         const assessments = assessmentStore.getUserAssessments(goal.userid);
-        let displayStatus = "";
+        let displayStatus = "Open";
 
         // create a date object called "timestamp" with the current date and time
         const timestamp = new Date();
