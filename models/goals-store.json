@@ -1,6 +1,54 @@
 {
   "goals": [
     {
+      "id": "33344210-ef01-11ea-a92a-312c1f34961a",
+      "date": "20/9/16",
+      "targetWeight": 21,
+      "additionalTarget": "Chest",
+      "additionalTargetValue": 21,
+      "status": "Open"
+    },
+    {
+      "id": "690f72c0-ef00-11ea-a92a-312c1f34961a",
+      "date": "20/9/10",
+      "targetWeight": 50,
+      "additionalTarget": "",
+      "additionalTargetValue": 0,
+      "status": "Open"
+    },
+    {
+      "id": "18f6b000-ef00-11ea-b740-0fe9ce684dcc",
+      "date": "20/9/12",
+      "targetWeight": 75,
+      "additionalTarget": "Chest",
+      "additionalTargetValue": 45,
+      "status": "Open"
+    },
+    {
+      "id": "af2fd480-eeff-11ea-b740-0fe9ce684dcc",
+      "date": "20/9/16",
+      "targetWeight": 75,
+      "additionalTarget": "Waist",
+      "additionalTargetValue": 35,
+      "status": "Open"
+    },
+    {
+      "id": "7fe4e580-eeff-11ea-81a4-cbb86ed59146",
+      "date": "20/9/16",
+      "targetWeight": 75,
+      "additionalTarget": "Waist",
+      "additionalTargetValue": 35,
+      "status": "Open"
+    },
+    {
+      "id": "d756b830-eefe-11ea-bc1b-f5e6549a640b",
+      "date": "20/9/16",
+      "targetWeight": 75,
+      "additionalTarget": "Waist",
+      "additionalTargetValue": 35,
+      "status": "Open"
+    },
+    {
       "id": "5a1356c0-eef0-11ea-b847-8f3deea80307",
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "date": "20/9/15",

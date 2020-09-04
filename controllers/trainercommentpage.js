@@ -4,6 +4,8 @@ const accounts = require("./accounts");
 const assessmentStore = require("../models/assessment-store");
 const logger = require("../utils/logger");
 const userStore = require("../models/user-store");
+const goalStore = require("../models/goals-store");
+const uuid = require("uuid");
 
 const trainerCommentPage = {
   index(request, response) {
@@ -29,8 +31,30 @@ const trainerCommentPage = {
     logger.info("Adding comment: " + comment);
     assessmentStore.setComment(assessmentId, comment);
     response.redirect("/trainercommentpage/" + memberId);
-  }
+  },
 
+  trainerAddGoal(request, response) {
+    const memberId = request.params.id;
+
+    // validate the data to make sure that the required fields are filled
+    if (request.body.date === "" || request.body.goalWeight <= 0 ||
+      (request.body.additionalTarget === "" && request.body.additionalTargetValue !== "") ||
+      (request.body.additionalTarget !== "" && request.body.additionalTargetValue === "")) {
+      response.redirect("/trainercommentpage/" + memberId);
+    } else {
+      const goal = {
+        id: uuid.v1(),
+        userid: request.params.id,
+        date: request.body.date,
+        targetWeight: Number(request.body.goalWeight),
+        additionalTarget: request.body.additionalTarget,
+        additionalTargetValue: Number(request.body.additionalTargetValue),
+        status: "Open"
+      };
+      goalStore.addGoal(goal);
+      response.redirect("/trainercommentpage/" + memberId);
+    }
+  }
 };
 
 module.exports = trainerCommentPage;

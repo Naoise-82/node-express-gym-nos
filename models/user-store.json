@@ -1,8 +1,8 @@
 {
   "users": [
     {
-      "firstName": "HOMER",
-      "lastName": "SIMPSON",
+      "firstName": "Homer",
+      "lastName": "Simpson",
       "email": "homer@simpson.com",
       "gender": "MALE",
       "height": 180,
@@ -12,8 +12,8 @@
       "assessmentCount": 5
     },
     {
-      "firstName": "marge",
-      "lastName": "simpson",
+      "firstName": "Marge",
+      "lastName": "Simpson",
       "email": "marge@simpson.com",
       "gender": "female",
       "height": 150,

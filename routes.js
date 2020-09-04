@@ -34,5 +34,6 @@ router.get("/trainerdashboard", trainerdashboard.index);
 router.get("/trainerdashboard/deletemember/:id", trainerdashboard.deleteMember);
 router.get("/trainercommentpage/:id", trainercommentpage.index);
 router.post("/trainercommentpage/addcomment/:id", trainercommentpage.addComment);
+router.post("/trainercommentpage/traineraddgoal/:id", trainercommentpage.trainerAddGoal);
 
 module.exports = router;

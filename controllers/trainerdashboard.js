@@ -31,6 +31,7 @@ const trainerDashboard = {
     userStore.removeUser(memberId);
     response.redirect("/trainerdashboard");
   },
+
 };
 
 module.exports = trainerDashboard;
