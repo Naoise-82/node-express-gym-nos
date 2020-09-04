@@ -11,6 +11,7 @@ const memberDashboard = {
   index(request, response) {
     logger.info("rendering member dashboard");
 
+    //pull all the relevant member data from the stores and generate their stats
     const loggedInUser = accounts.getCurrentUser(request);
     const stats = analytics.generateMemberStats(loggedInUser);
     const goals = goalStore.getUserGoals(loggedInUser.id);

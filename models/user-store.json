@@ -1,26 +1,6 @@
 {
   "users": [
     {
-      "firstName": "Bart",
-      "lastName": "Simpson",
-      "gender": "Male",
-      "height": 130,
-      "startingWeight": 45,
-      "email": "bart@simpson.com",
-      "password": "bart",
-      "id": "97b91350-eeed-11ea-8c5f-b9fcf18c4890"
-    },
-    {
-      "firstName": "Naoise",
-      "lastName": "O'Sullivan",
-      "gender": "Male",
-      "height": "180",
-      "startingWeight": 70,
-      "email": "naoise@osullivan.com",
-      "password": "naoise",
-      "id": "eb600ac0-e198-11ea-8fa1-05ff3d8149f0"
-    },
-    {
       "firstName": "HOMER",
       "lastName": "SIMPSON",
       "email": "homer@simpson.com",
@@ -28,7 +8,8 @@
       "height": 180,
       "startingWeight": 80,
       "password": "secret",
-      "id": "3ad52697-6d98-4d80-8273-084de55a86c0"
+      "id": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "assessmentCount": 5
     },
     {
       "firstName": "marge",
@@ -38,7 +19,8 @@
       "height": 150,
       "startingWeight": 60,
       "password": "secret",
-      "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
+      "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "assessmentCount": 1
     }
   ]
 }

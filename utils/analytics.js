@@ -12,11 +12,12 @@ const analytics = {
   generateGoalStats(loggedInUser) {
     const goals = goalsStore.getUserGoals(loggedInUser.id);
 
-    //reset values in goalStats.js
+    //reset any residual values in goalStats.js
     goalStats.openGoals = 0;
     goalStats.achievedGoals = 0;
     goalStats.missedGoals = 0;
 
+    // loop through the member's goals, totting up each status type found
     for (let i = 0; i < goals.length; i++) {
       if (goals[i].status === "Open") {
         goalStats.openGoals += 1;
@@ -32,8 +33,8 @@ const analytics = {
   },
 
   generateMemberStats(loggedInUser) {
-    const assessments = assessmentStore.getUserAssessments(loggedInUser.id);
 
+    // call each method to generate the relevant stat from the latest assessment
     memberStats.weight = this.getCurrentWeight(loggedInUser);
     memberStats.bmi = this.calculateBMI(loggedInUser);
     memberStats.bmiCategory = this.bmiCategory(loggedInUser);
@@ -44,6 +45,8 @@ const analytics = {
 
   getCurrentWeight(loggedInUser) {
     const assessments = assessmentStore.getUserAssessments(loggedInUser.id);
+
+    // set the current weight to either the starting weight, or the weight recorded to the latest assessment
     let currentWeight = 0;
     if (assessments.length > 0) {
       currentWeight = assessments[0].weight;
@@ -57,12 +60,14 @@ const analytics = {
     const assessments = assessmentStore.getUserAssessments(loggedInUser.id);
     let weight = 0;
 
+    //determine the current weight
     if (assessments.length > 0) {
      weight = assessments[0].weight;
     } else weight = loggedInUser.startingWeight;
 
     const height = (loggedInUser.height)/100;
-   
+
+    // calculate the BMI and round to 2 decimal places
     return Math.round((weight/(height * height)*100))/100;
   },
 
@@ -70,6 +75,7 @@ const analytics = {
 
     const bmi = this.calculateBMI(loggedInUser);
 
+    // match the current BMI to one of the standard categories
     if(bmi < 15) {
       return "Very Severely Underweight";
     } else if (bmi >= 15 && bmi < 16) {
@@ -100,10 +106,11 @@ const analytics = {
 
     let idealBodyWeight = 1;
 
+    // determine if the member is male or female
     if (loggedInUser.gender.toLowerCase() === "male") {
-      idealBodyWeight = Math.round((50.0 + 0.9 * (loggedInUser.height - 152))*100)/100;
+      idealBodyWeight = Math.round((50.0 + 0.9 * (loggedInUser.height - 152))*100)/100; // devine formula - male
     } else if (loggedInUser.gender.toLowerCase() === "female") {
-      idealBodyWeight = Math.round((45.5 + 0.9 * (loggedInUser.height - 152))*100)/100;
+      idealBodyWeight = Math.round((45.5 + 0.9 * (loggedInUser.height - 152))*100)/100; // devine formula - female
     }
     return idealBodyWeight;
   },
@@ -111,6 +118,7 @@ const analytics = {
   checkIdealBodyWeight(loggedInUser) {
     let weightIndicator = false;
 
+    // determine whether the member's current weight is within 0.2kg of their ideal body weight (c'mon, that's close enough!)
     if (Math.abs(this.getCurrentWeight(loggedInUser) - this.calculateIdealBodyWeight(loggedInUser)) <= tolerance) {
       weightIndicator = true;
     }
