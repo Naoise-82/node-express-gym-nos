@@ -9,7 +9,7 @@ const uuid = require("uuid");
 
 const trainerCommentPage = {
   index(request, response) {
-    
+
     logger.info("rendering trainer comment page");
     const loggedInTrainer = accounts.getCurrentTrainer(request);
     const memberId = request.params.id;
