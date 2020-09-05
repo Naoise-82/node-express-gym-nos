@@ -14,19 +14,6 @@
       "comment": "doing great!"
     },
     {
-      "id": "551184a0-eeee-11ea-b5d3-357aea021891",
-      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "date": "20/09/04 21:36:38",
-      "weight": 85,
-      "chest": 0,
-      "thigh": 0,
-      "upperarm": 0,
-      "waist": 0,
-      "hips": 32,
-      "weightTrend": false,
-      "comment": "hey"
-    },
-    {
       "id": "b55667a0-eeed-11ea-8c5f-b9fcf18c4890",
       "userid": "97b91350-eeed-11ea-8c5f-b9fcf18c4890",
       "date": "20/09/04 21:32:10",
@@ -39,18 +26,6 @@
       "weightTrend": true
     },
     {
-      "id": "fab89b40-e661-11ea-9fe6-171302cadf96",
-      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "date": "20/08/25 00:31:48",
-      "weight": 85,
-      "chest": 0,
-      "thigh": 0,
-      "upperarm": 0,
-      "waist": 0,
-      "hips": 0,
-      "weightTrend": true
-    },
-    {
       "id": "64c6b4d0-e334-11ea-a8f4-a52a3461d4e3",
       "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
       "date": "20/08/20 23:27:55",
@@ -60,30 +35,6 @@
       "upperarm": 0,
       "waist": 30,
       "hips": 0,
-      "weightTrend": false
-    },
-    {
-      "id": "10ccebb0-e0e1-11ea-90af-9bf7a3a942be",
-      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "date": "20/08/18 00:26:24",
-      "weight": 90,
-      "chest": "",
-      "thigh": "",
-      "upperarm": "",
-      "waist": "",
-      "hips": "",
-      "weightTrend": false
-    },
-    {
-      "id": "0efd34c0-e0e1-11ea-90af-9bf7a3a942be",
-      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "date": "20/08/18 00:26:21",
-      "weight": 85,
-      "chest": "",
-      "thigh": "",
-      "upperarm": "",
-      "waist": "",
-      "hips": "",
       "weightTrend": false
     }
   ]

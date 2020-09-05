@@ -9,10 +9,12 @@ const uuid = require("uuid");
 
 const trainerCommentPage = {
   index(request, response) {
+    
     logger.info("rendering trainer comment page");
     const loggedInTrainer = accounts.getCurrentTrainer(request);
     const memberId = request.params.id;
     const assessments = assessmentStore.getUserAssessments(memberId);
+
     const viewData = {
       title: "Trainer Comment Page",
       trainer: loggedInTrainer,
@@ -40,11 +42,18 @@ const trainerCommentPage = {
     if (request.body.date === "" || request.body.goalWeight <= 0 ||
       (request.body.additionalTarget === "" && request.body.additionalTargetValue !== "") ||
       (request.body.additionalTarget !== "" && request.body.additionalTargetValue === "")) {
-      response.redirect("/trainercommentpage/" + memberId);
+      response.redirect("/trainercommentpage/");
     } else {
+        // set the additional target fields to N/A and None in the case that they are not being used
+        let additionalTargetValue = "N/A";
+        let additionalTarget = "None";
+        if(request.body.additionalTargetValue > 0) {
+          additionalTarget = request.body.additionalTarget;
+          additionalTargetValue = Number(request.body.additionalTargetValue);
+        }
       const goal = {
         id: uuid.v1(),
-        userid: request.params.id,
+        userid: memberId,
         date: request.body.date,
         targetWeight: Number(request.body.goalWeight),
         additionalTarget: request.body.additionalTarget,

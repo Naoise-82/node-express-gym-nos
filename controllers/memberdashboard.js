@@ -83,13 +83,20 @@ const memberDashboard = {
       (request.body.additionalTarget !== "" && request.body.additionalTargetValue === "")) {
       response.redirect("/memberdashboard");
     } else {
+      // set the additional target fields to N/A and None in the case that they are not being used
+      let additionalTargetValue = "N/A";
+      let additionalTarget = "None";
+      if(request.body.additionalTargetValue > 0) {
+        additionalTarget = request.body.additionalTarget;
+        additionalTargetValue = Number(request.body.additionalTargetValue);
+      }
       const goal = {
         id: uuid.v1(),
         userid: loggedInUser.id,
         date: request.body.date,
         targetWeight: Number(request.body.goalWeight),
-        additionalTarget: request.body.additionalTarget,
-        additionalTargetValue: Number(request.body.additionalTargetValue),
+        additionalTarget: additionalTarget,
+        additionalTargetValue: additionalTargetValue,
         status: "Open"
       };
       goalStore.addGoal(goal);
