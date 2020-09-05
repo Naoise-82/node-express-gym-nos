@@ -56,19 +56,19 @@ app.engine(
           displayStatus = "Achieved"
 
         } else if (currentDate <= goal.date && assessments[0].weight <= goal.targetWeight &&
-                  (additionalTarget === "" || goal.additionalTargetValue <= assessmentValue)) {
+                  (additionalTarget === "None" || goal.additionalTargetValue <= assessmentValue)) {
           goal.status = "Achieved";
           goalsStore.updateGoal(goal);
           displayStatus = "Achieved";
 
         } else if (currentDate <= goal.date && assessments[0].weight > goal.targetWeight &&
-                  (additionalTarget === "" || goal.additionalTargetValue > assessmentValue)) {
+                  (additionalTarget === "None" || goal.additionalTargetValue > assessmentValue)) {
           goal.status = "Open";
           goalsStore.updateGoal(goal);
           displayStatus = "Open";
 
         } else if (currentDate > goal.date && assessments[0].weight > goal.targetWeight &&
-                  (additionalTarget === "" || goal.additionalTargetValue > assessmentValue)) {
+                  (additionalTarget === "None" || goal.additionalTargetValue > assessmentValue)) {
           displayStatus = "Missed";
           goal.status = "Missed";
           goalsStore.updateGoal(goal);

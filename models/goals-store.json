@@ -1,5 +1,22 @@
 {
   "goals": [
-
+    {
+      "id": "658a7530-efc5-11ea-ab3a-55a078185c30",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "date": "20/9/19",
+      "targetWeight": 78,
+      "additionalTarget": "Thigh",
+      "additionalTargetValue": 20,
+      "status": "Achieved"
+    },
+    {
+      "id": "80f7bf90-efc4-11ea-be1b-d7b537a38f59",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "date": "20/9/26",
+      "targetWeight": 80,
+      "additionalTarget": "None",
+      "additionalTargetValue": "N/A",
+      "status": "Achieved"
+    }
   ]
 }

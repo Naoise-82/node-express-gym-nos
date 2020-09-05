@@ -63,6 +63,7 @@ const memberDashboard = {
       weightTrend: weightTrend
     };
     assessmentStore.addAssessment(assessment);
+    analytics.generateGoalStats(loggedInUser);
     response.redirect("/memberdashboard");
   },
 

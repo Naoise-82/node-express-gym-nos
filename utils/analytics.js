@@ -23,7 +23,7 @@ const analytics = {
         goalStats.openGoals += 1;
       }
       if (goals[i].status === "Achieved") {
-        goalStats.achievedGoals =+ 1;
+        goalStats.achievedGoals += 1;
       }
       if (goals[i].status === "Missed") {
         goalStats.missedGoals += 1;

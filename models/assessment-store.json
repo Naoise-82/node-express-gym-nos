@@ -1,17 +1,52 @@
 {
   "assessmentCollection": [
     {
-      "id": "d360e030-eeee-11ea-b847-8f3deea80307",
+      "id": "8119d110-efc5-11ea-ab3a-55a078185c30",
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "date": "20/09/04 21:40:10",
-      "weight": 84,
+      "date": "20/09/05 23:16:54",
+      "weight": 78,
+      "chest": 0,
+      "thigh": 20,
+      "upperarm": 0,
+      "waist": 0,
+      "hips": 0,
+      "weightTrend": true
+    },
+    {
+      "id": "732594e0-efc5-11ea-ab3a-55a078185c30",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "date": "20/09/05 23:16:30",
+      "weight": 79,
+      "chest": 0,
+      "thigh": 20,
+      "upperarm": 0,
+      "waist": 0,
+      "hips": 0,
+      "weightTrend": false
+    },
+    {
+      "id": "ba62d850-efc4-11ea-be1b-d7b537a38f59",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "date": "20/09/05 23:11:20",
+      "weight": 79,
       "chest": 0,
       "thigh": 0,
       "upperarm": 0,
       "waist": 0,
-      "hips": 31,
-      "weightTrend": true,
-      "comment": "doing great!"
+      "hips": 0,
+      "weightTrend": true
+    },
+    {
+      "id": "9456b3c0-efc4-11ea-be1b-d7b537a38f59",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "date": "20/09/05 23:10:16",
+      "weight": 80,
+      "chest": 0,
+      "thigh": 0,
+      "upperarm": 0,
+      "waist": 0,
+      "hips": 0,
+      "weightTrend": true
     },
     {
       "id": "b55667a0-eeed-11ea-8c5f-b9fcf18c4890",
