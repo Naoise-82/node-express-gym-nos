@@ -25,15 +25,15 @@ app.engine(
       // assess the status of a goal to determine whether it is still open, achieved or missed
       checkGoalStatus(goal, request) {
         const assessments = assessmentStore.getUserAssessments(goal.userid);
-        let displayStatus = "Open";
+        let displayStatus = "";
 
         // create a date object called "timestamp" with the current date and time
         const timestamp = new Date();
 
         //take the relevant data from the timestamp to compile short string to match the date format in the goals-store
         const currentDate = timestamp.getFullYear()-2000 + "/"
-          + (timestamp.getMonth()+1) + "/" // add a leading 0 & shorten to two characters (if needed)
-          + ("0" + timestamp.getDate()).slice(-2);
+          + (timestamp.getMonth()+1) + "/"
+          + ("0" + timestamp.getDate()).slice(-2); // add a leading 0 & shorten to two characters (if needed)
 
         // determine the additional target value to be compared to from the assessment
         let additionalTarget = goal.additionalTarget;
@@ -59,19 +59,19 @@ app.engine(
                   (additionalTarget === "None" || goal.additionalTargetValue <= assessmentValue)) {
           goal.status = "Achieved";
           goalsStore.updateGoal(goal);
-          displayStatus = "Achieved";
+          displayStatus = goal.status;
 
         } else if (currentDate <= goal.date && assessments[0].weight > goal.targetWeight &&
                   (additionalTarget === "None" || goal.additionalTargetValue > assessmentValue)) {
           goal.status = "Open";
           goalsStore.updateGoal(goal);
-          displayStatus = "Open";
+          displayStatus = goal.status;
 
         } else if (currentDate > goal.date && assessments[0].weight > goal.targetWeight &&
                   (additionalTarget === "None" || goal.additionalTargetValue > assessmentValue)) {
-          displayStatus = "Missed";
           goal.status = "Missed";
           goalsStore.updateGoal(goal);
+          displayStatus = goal.status;
         }
         return displayStatus;
       }

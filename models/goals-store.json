@@ -1,6 +1,51 @@
 {
   "goals": [
     {
+      "id": "f41d9ed0-f542-11ea-9a52-657e4178407e",
+      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "date": "20/9/19",
+      "targetWeight": 48,
+      "additionalTarget": "Waist",
+      "additionalTargetValue": 30,
+      "status": "Open"
+    },
+    {
+      "id": "b34dabc0-f542-11ea-9a52-657e4178407e",
+      "userid": "402efc60-f53e-11ea-9d84-17de0b466d67",
+      "date": "20/9/23",
+      "targetWeight": 48.1,
+      "additionalTarget": "Thigh",
+      "additionalTargetValue": 12,
+      "status": "Open"
+    },
+    {
+      "id": "a31e4210-f541-11ea-bbd1-4fe8ebb62878",
+      "userid": "402efc60-f53e-11ea-9d84-17de0b466d67",
+      "date": "20/9/18",
+      "targetWeight": 48.4,
+      "additionalTarget": "None",
+      "additionalTargetValue": "N/A",
+      "status": "Achieved"
+    },
+    {
+      "id": "94a126d0-f541-11ea-bbd1-4fe8ebb62878",
+      "userid": "402efc60-f53e-11ea-9d84-17de0b466d67",
+      "date": "20/9/15",
+      "targetWeight": 49,
+      "additionalTarget": "Waist",
+      "additionalTargetValue": 26,
+      "status": "Achieved"
+    },
+    {
+      "id": "3498b090-f542-11ea-a679-177cf0236242",
+      "userid": "402efc60-f53e-11ea-9d84-17de0b466d67",
+      "date": "20/9/10",
+      "targetWeight": 49.15,
+      "additionalTarget": "None",
+      "additionalTargetValue": "N/A",
+      "status": "Missed"
+    },
+    {
       "id": "658a7530-efc5-11ea-ab3a-55a078185c30",
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "date": "20/9/19",

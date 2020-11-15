@@ -1,6 +1,16 @@
 {
   "users": [
     {
+      "firstName": "Bart",
+      "lastName": "Simpson",
+      "gender": "Male",
+      "height": 150,
+      "startingWeight": 50,
+      "email": "bart@simpson.com",
+      "password": "bart",
+      "id": "402efc60-f53e-11ea-9d84-17de0b466d67"
+    },
+    {
       "firstName": "Homer",
       "lastName": "Simpson",
       "email": "homer@simpson.com",
